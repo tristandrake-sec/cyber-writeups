@@ -67,3 +67,33 @@
 - Missed the correct definitions for encrypting and decrypting. Encrypting is the process of putting something into code or cipher; decrypting is to decipher or decode it.
 - Missed the importance of the private key. The sender is the only one who holds the private key, so if the public key decrypts the signature, only the matching private key could have produced it.
 - Missed what non-repudiation actually is — it's the combination of both integrity and origin, not a replacement for either.
+
+## AAA
+
+**## What it is**
+
+- **AAA framework** — Authentication, Authorization, and Accounting.
+- **Identification** — you claim to be a particular user.
+- **Authentication** — proving you really are what you say you are (you know the password).
+- **Authorization** — what type of access you have.
+- **Accounting** — a log of login time, data sent and received, logout time.
+
+**## Authenticating systems**
+
+- You may have to manage many devices, often ones you can't physically see.
+- A system can't type a password, and you might not want to store one on it. So authentication is provided through a **certificate** on the device, which is usually digitally signed.
+- Process for creating a certificate: an essential piece is a **certificate authority (CA)** — a device or software responsible for managing all certificates in the environment.
+- Any time you want to perform an authentication, you use that certificate and verify it's digitally signed.
+- A certificate authority has its own certificate, signed by a root CA.
+
+**## Authorization models**
+
+- Used to authorize devices to resources within the network.
+- The problem: how do you create a relationship that scales for tens of thousands of users?
+- You put an authorization model in between the users and the services, before they access data.
+- Doing it directly doesn't scale — you'd have to manually configure it for each user/service pair.
+- To scale, use an authorization model or an **abstraction** that separates the user from the info they're trying to access.
+
+**## What I mixed up**
+
+- Commonly mixed up identification and authentication. **Identification** is the process where a user claims an identity — maybe through an email. **Authentication** answers "can you prove it?" — with a password.
