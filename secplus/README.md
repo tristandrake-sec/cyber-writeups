@@ -97,3 +97,61 @@
 **## What I mixed up**
 
 - Commonly mixed up identification and authentication. **Identification** is the process where a user claims an identity — maybe through an email. **Authentication** answers "can you prove it?" — with a password.
+
+## Gap Anslysis
+
+**## What it is**
+
+- A gap analysis is a study of where we are vs where we want to be. We study this to know exactly what security will be needed in the future.
+- Before starting a gap analysis it's important to have a **baseline** — gives you something to work toward, a goal.
+- Examples of baselines: NIST Special Publication 800-171 Revision 2, ISO/IEC 27001.
+
+**## What a baseline consists of**
+
+- An analysis of employees — experience, training, and knowledge of security policies and procedures.
+- An evaluation of the existing IT system and how it correlates with the current IT system.
+
+**## The analysis**
+
+- Begins with a comparison of the existing systems against the current system, identifying weaknesses and how to compensate for them.
+- Make a detailed analysis of broad security systems and break them down into smaller pieces.
+- Once you've gathered info across all locations, produce a final document summarizing everything discovered.
+- Start with a comparison of the baseline objectives to where you want to be, and how you'll get there.
+- Create a final **gap analysis report** — a formal description of the baseline, what's required, and how you'll achieve the goal.
+
+**## What I mixed up**
+
+- Missed the reasoning for why a baseline is needed before starting the analysis. A baseline is necessary to display the starting point and the distance between the starting point and the goal.
+
+## Zero-Trust
+
+**## What it is**
+
+- In many networks, once you're through the firewall it's pretty open — no checks or balances. This lets both authorized and unauthorized/malicious software move freely.
+- **Zero trust** means you have to authenticate any time you access a particular resource. Applies to every device, user, and process.
+- Nothing is trusted. Adds multi-factor authentication, encryption, security policies, additional firewalls, monitoring, etc.
+
+**## Planes of operation**
+
+- One way to implement zero trust is to break security devices down into smaller individual components, or separate planes of function. Applies to physical, virtual, and cloud components.
+- **Data plane** — the part of the device actually performing the security process. Processes frames, packets, network data. Processing, forwarding, trunking, encrypting, NAT.
+- **Control plane** — manages all the actions in the data plane. Policies, rules, determining how packets should be forwarded, routing tables, session tables, NAT tables.
+- Both can be implemented virtually or through hardware.
+
+**## Controlling access**
+
+- **Adaptive identity** — examine the identity of an individual and apply security controls based on the user plus outside info beyond the authentication itself. Look at the source; risk indicators include physical location, type of connection, IP address, relationship to the organization.
+- Another approach is to **limit possible entry points**.
+- Once the info is collected you create **policy-driven access control** — examines all these individual data points, then decides what authentication should be required.
+- **Security zones** — qualify a user by understanding where they're connecting from. Looks at the overall path: where you're coming from and where you're going. Set up as trusted/untrusted, internal/external, VPNs, or splitting departments. Zones can automatically block a connection from a certain zone, or grant trusted access through others.
+
+**## Policy enforcement**
+
+- **Policy Enforcement Point (PEP)** — any subject or system is subjected to evaluation by the PEP. Think of it as a gatekeeper, or multiple devices working together to provide identification. It doesn't make the decision — it gathers the info and passes it to the policy decision point.
+- **Policy Decision Point** — responsible for examining the authentication and deciding whether it should be allowed on the network.
+- **Policy Engine** — looks at all requests coming through, compares them to a set of policies, and decides granted or denied.
+- **Policy Administrator** — takes that decision and provides it to the PEP.
+
+**## What I mixed up**
+
+- Missed that the PEP comes first and gathers info, then passes it to the PDP. The PDP has two parts: the **policy engine**, which compares the request against policies and returns an allow or deny, and the **policy administrator**, which relays that allow/deny back to the PEP.
