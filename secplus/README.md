@@ -155,3 +155,76 @@
 **## What I mixed up**
 
 - Missed that the PEP comes first and gathers info, then passes it to the PDP. The PDP has two parts: the **policy engine**, which compares the request against policies and returns an allow or deny, and the **policy administrator**, which relays that allow/deny back to the PEP.
+
+## Physical Security
+
+**## Barricades / bollards**
+
+- Prevent access, channel people through a specific access point, act as a security notice.
+- Often installed as concrete, but can also be water around a building forcing people to cross a bridge to reach the facility.
+
+**## Access control vestibule**
+
+- A room you must pass through to gain access to the rest of the building. May have higher security where you badge in.
+- Can be configured so all doors are unlocked, all locked, or one door open while the rest are locked.
+- Designed to control access through a particular area, whether for a single person or a group.
+
+**## Fences**
+
+- Build a perimeter. Obvious, but provides a way to deny access.
+- May be transparent or opaque.
+- Need to be robust and prevent climbing — razor wire, or a very tall fence.
+
+**## Video surveillance**
+
+- CCTV (closed circuit television).
+- May have motion detection and can provide detailed object detection.
+- Most setups have multiple cameras sending data back to one storage point.
+
+**## Security guards**
+
+- Provide physical security, validate whether people are allowed in.
+- Usually work in twos or more.
+- **Access badge** — identification proving you have access, provides detail about yourself.
+
+**## Lighting**
+
+- Illuminating a dark area prevents access. Attackers avoid light, and it's easier to see when lit.
+
+**## Sensors**
+
+- **Infrared** — detects infrared radiation in both light and dark.
+- **Pressure** — notices a change in force.
+- **Microwave** — for a very wide area, may be more efficient.
+- **Ultrasonic** — sends signals and looks for reflected sound waves. Useful in a parking lot.
+
+**## What I mixed up**
+
+- Missed being able to identify the difference between a deterrent and a preventive physical control. A **deterrent** is a psychological measure used to discourage malicious behavior. A **preventive** control is a physical barrier designed to stop unauthorized access.
+
+## Deception and Disruption
+
+**## Honeypot**
+
+- Attracts attackers and traps them there. Lets you view the security techniques they're trying to use against you.
+- In most cases the attacker is an automated process, so you get to see what process it is and what machines it's targeting.
+- Honeypots create a virtual world to explore. Constant battle between building believable virtual worlds and attackers trying to discern whether they're on a real system or stuck in a honeypot. More realistic is better.
+
+**## Honeynet**
+
+- A combination of multiple honeypots. May consist of servers, routers, switches, and firewalls rather than a single device.
+- Makes a much more believable environment and keeps attackers busy.
+
+**## Honeyfiles**
+
+- Files with fake info, or that appear to be very important or contain sensitive info.
+- In normal production, no one should have access to the honeyfiles — so any access is a signal.
+
+**## Honeytokens**
+
+- Traceable data added to a honeynet. If the data is copied, you know where it came from.
+- Might use fake email addresses or API tokens.
+
+**## What I mixed up**
+
+- Missed the difference between a honeyfile and a honeytoken. A **honeyfile** is a file containing fake sensitive info. A **honeytoken** is traceable data where the owner of the honeynet can track where the data is copied to.
