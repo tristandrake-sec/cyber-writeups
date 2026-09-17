@@ -71,3 +71,76 @@
 **## What I'd remember next time**
 
 - Remember essential/basic commands to minimize lab time and get the proper response without assistance
+
+**thm/windows-fundamentals-3**
+
+**## Room / date**
+
+- Windows Fundamentals 3 — Monday 9/14
+
+**## What it covered**
+
+- Built-in Microsoft security tools designed to keep devices and data secure.
+
+**## What I actually did**
+
+- Viewed Windows Update & Security, deep-diving into specific sections: virus and threat protection, firewall and network protection, app and browser control, exploit protection, device security, core isolation, security processor details, BitLocker, and Volume Shadow Copy Service.
+- Learned what these settings are, how they work, and how to properly configure them.
+
+**## Where I got stuck**
+
+- Didn't get stuck anywhere — mainly read-and-respond, didn't configure much myself.
+
+**## What I'd remember next time**
+
+- How to configure my own computer properly with the given info, and lock down the terms used in the room.
+
+---
+
+**thm/networking-essentials**
+
+**## Room / date**
+
+- Networking Essentials — Tuesday 9/15
+
+**## What it covered**
+
+- Protocols and technologies that enable automatic configuration, routing, and packet delivery.
+
+**## What I actually did**
+
+- Read and learned about DHCP, ARP (bridging from layer 3 addressing to layer 2 addressing), ICMP, routing, and NAT.
+- Worked in the terminal with each topic — found echo ping requests, destination MAC addresses in an ARP request, and the destination IP address used when a client sends a DHCP discover packet.
+
+**## Where I got stuck**
+
+- Struggled toward the end with echo ping requests and how many bytes were being sent in the echo request.
+
+**## What I'd remember next time**
+
+- How to properly identify the number of bytes sent by echo ping requests.
+
+---
+
+**thm/active-directory-basics**
+
+**## Room / date**
+
+- Active Directory Basics — Wednesday 9/16 & Thursday 9/17
+
+**## What it covered**
+
+- Core concepts and functionality of Microsoft's Active Directory within a Windows domain environment.
+
+**## What I actually did**
+
+- Read and learned about Active Directory, Domain Controllers, managing users and computers in AD, group policy management, authentication methods, trees, forests, and trusts.
+- Connected to the DC, reset Sophie's password as Phillip, forced a reset at next login, and logged in as Sophie to retrieve the desktop flag.
+
+**## Where I got stuck**
+
+- Getting the login flow to work — logging in as Phillip, forcing the reset, then logging in as Sophie.
+
+**## What I'd remember next time**
+
+- Sometimes TryHackMe doesn't provide all the info necessary, and you may need outside resources to answer the questions.
