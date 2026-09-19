@@ -228,3 +228,53 @@
 **## What I mixed up**
 
 - Missed the difference between a honeyfile and a honeytoken. A **honeyfile** is a file containing fake sensitive info. A **honeytoken** is traceable data where the owner of the honeynet can track where the data is copied to.
+
+## Change Management
+
+**## What it is**
+
+- When making a change to an application or OS, the scope on your own machine is a single computer. In the corporate world it can be thousands.
+- Changes include firewall modifications, software updates, patching an application, or modifying switch ports.
+- One of the most common risks is in the enterprise. It's important to have a formal process for making changes — these are often overlooked or ignored.
+- Have clear policies (frequency, duration). Hard to manage without a formal change control process. These processes exist to avoid downtime, confusion, and mistakes.
+
+**## A typical change process**
+
+- Complete a request form
+- Determine the purpose of the change
+- Identify the scope
+- Schedule a date and time
+- Determine affected systems and impact
+- Analyze the risk associated with the change
+- Get approval from the change control board
+- Get end-user acceptance after the change is complete
+
+**## Roles**
+
+- **Owner** — usually the one wanting the change. Doesn't control the change control process or make the change itself; they manage it, and test it once complete.
+    - Example: address labels need upgrading. Shipping and receiving owns it; IT handles the actual change.
+- **Stakeholders** — those impacted by the change. They want input/control over when it happens. A single change can affect one person or many.
+
+**## Risk**
+
+- Every change has a different impact on the company. Assess by determining risk value — risks can be minor or far-reaching.
+- The fix might not fix anything, might break something else, cause an OS to fail, or corrupt data.
+- Also determine the risk of _not_ making the fix.
+
+**## Testing**
+
+- Do testing before implementing, using a **sandbox** — a technological safe space with no connection to production or the real world.
+- Inside the sandbox you can duplicate the system, make the change, and see the effect.
+- Good time to test the **backout plan** — if something goes wrong, you revert to a previous version. Not as easy as it sounds; always good to have a full, complete backup.
+
+**## Maintenance window**
+
+- The maintenance window is when the change occurs. During non-working hours is best.
+
+**## Why it matters**
+
+- Change management is critical. Must be well documented so anyone can view it, and reflected in the standards.
+
+**## What I mixed up**
+
+- Mixed up three roles. The **change control board** authorizes the change, the **owner** manages it and tests when completed (doesn't implement it), and the **IT / technical team** actually implements it.
