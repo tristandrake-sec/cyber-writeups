@@ -109,3 +109,39 @@
 
 - Missed QoS (Quality of Service) — manages and prioritizes data traffic so critical applications maintain performance during network issues. Not tied to one device: implemented on routers, switches, firewalls, and load balancers. Also wrote "PoS" for it in my notes, which is point-of-sale, unrelated.
 
+## Public Key Infrastructure
+
+**secplus/public-key-infrastructure**
+
+**## What it is**
+
+- PKI covers the policies, procedures, hardware, software, and people involved. A big endeavor with a lot of decisions.
+- A way to associate a certificate with people or devices, in conjunction with a **certificate authority** — a way to trust whether that person or device is really who they say they are.
+
+**## Symmetric encryption**
+
+- Decryption uses the same key used to encrypt — a single shared key. Also called a secret key algorithm or shared secret.
+- If the key gets out, you need a new one.
+- Doesn't scale well — challenging to distribute once you pass roughly 10 people/devices.
+- Benefit: very fast, less overhead.
+
+**## Asymmetric encryption**
+
+- Encrypting and decrypting with two different keys. The keys are mathematically related and created at the same time.
+- One is assigned as the **public key**, one as the **private key**. The private key is only accessible to one person or device; the public key is available to anyone.
+- The public key can encrypt; only the private key can decrypt.
+- You can't derive one key from the other — even with the public key, you can't work out the private key.
+- Creating a key pair requires a lot of randomization, prime numbers, and math.
+- Often assign a password to the private key.
+- Ciphertext is what you get from encrypting the plaintext with the public key.
+
+**## Key escrow**
+
+- In an environment with hundreds or thousands of users, one way to manage keys is a third party, or performing your own key escrow.
+- May be controversial, but required to maintain uptime and reliability.
+
+**## What I mixed up**
+
+- A digital signature doesn't encrypt the message/data itself. It proves the data is actually being sent by that person.
+- Encrypting with the recipient's **public key** gives **confidentiality** — only the person with the private key can unlock/read it.
+- Encrypting the hash with your own **private key** gives **non-repudiation** — as the holder of the private key, only you could have produced that digital signature, and everyone with your public key can verify it came from you.
