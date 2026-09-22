@@ -108,3 +108,4 @@
 **## What I mixed up**
 
 - Missed QoS (Quality of Service) — manages and prioritizes data traffic so critical applications maintain performance during network issues. Not tied to one device: implemented on routers, switches, firewalls, and load balancers. Also wrote "PoS" for it in my notes, which is point-of-sale, unrelated.
+

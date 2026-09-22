@@ -278,3 +278,57 @@
 **## What I mixed up**
 
 - Mixed up three roles. The **change control board** authorizes the change, the **owner** manages it and tests when completed (doesn't implement it), and the **IT / technical team** actually implements it.
+
+## Technical Change Management
+
+**## What it is**
+
+- When making changes to tens, hundreds, or thousands of devices, a simple update can get complex.
+- The change control process is concerned with _what_ needs to be changed; the technician actually performs the changes.
+
+**## Allow / deny lists**
+
+- A list of applications that are allowed or not allowed in your environment.
+- Add malicious applications to a **deny list**, or add only the necessary applications to an **allow list**.
+- A deny list is more flexible — you can run any application not on it.
+
+**## Scope**
+
+- When a change is submitted, it has a very specific scope: only make changes to what's listed in the documentation.
+- Can't change other applications, but there are times you have to expand the scope to complete the primary goal.
+- This is why it's important to have very specific, documented change control.
+
+**## Downtime**
+
+- Services are unavailable during the change window. That's why changes happen during non-work hours if possible.
+- If no downtime is allowed, switch to a secondary system, make the change, then switch back to the primary once complete. Lets you monitor the change — if anything goes wrong, you stay on the secondary.
+- Make sure everyone is aware of the downtime.
+
+**## Restarts**
+
+- Common to require a restart/reboot. Also helps confirm whether the system can recover from something like a power outage.
+- Stopping and restarting just a service may only take seconds or minutes.
+- For applications, users may need to fully log out and restart with the new version.
+
+**## Legacy applications**
+
+- Usually run for a very long time and may no longer be supported by the developer.
+- Usually no changes are made because of the unknowns. Understand it through documentation and bring it into the normal cycle — but it may be quirky.
+
+**## Dependencies**
+
+- You may have to change one application or service before another, or it won't work unless a secondary service/application is installed.
+- May require multiple updates to work, and the dependency may not be on the same system.
+
+**## Documentation**
+
+- The only constant is change, so documentation is important to keep up with what's been implemented. May include updating diagrams, policies, and procedures.
+
+**## Version control**
+
+- Dealing with change control also means dealing with version control — a way to track all versions installed.
+- Documents changes to router configs, Windows OS patches, application registry entries. Not always straightforward.
+
+**## What I mixed up**
+
+- Mixed up flexibility vs security with allow/deny lists. The **allow list** gives more security, since only applications on it can run. The **deny list** gives more flexibility, since you can run any application not on it.
