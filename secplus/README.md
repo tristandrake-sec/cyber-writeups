@@ -332,3 +332,67 @@
 **## What I mixed up**
 
 - Mixed up flexibility vs security with allow/deny lists. The **allow list** gives more security, since only applications on it can run. The **deny list** gives more flexibility, since you can run any application not on it.
+
+## Key Exchange
+
+**## The problem**
+
+- How do you share the encryption key between two people without transferring it insecurely, like over the internet?
+
+**## Out-of-band exchange**
+
+- Not sending the key over the internet — telephone or in person instead.
+
+**## In-band exchange**
+
+- The key goes over the network, but you protect it with additional encryption.
+- Use asymmetric encryption to deliver a symmetric key.
+
+**## Session keys**
+
+- Used on a temporary basis. A new one is made per session.
+- To implement them safely they need to be changed often and be unpredictable.
+
+**## Public key cryptography**
+
+- Lets both sides of the conversation create the same symmetric key without ever sending it across the network.
+
+**## What I mixed up**
+
+Why use both asymmetric and symmetric instead of asymmetric the whole way: it combines the best of both worlds. Symmetric is efficient at delivering info at incredibly fast speeds; asymmetric is slower but ensures a secure key exchange. Combining the two gives fast delivery and a proper exchange of keys.
+
+---
+
+## Encryption Technologies
+
+**## TPM (Trusted Platform Module)**
+
+- Provides cryptographic functions for computers.
+- Has persistent memory and versatile memory, and is password protected.
+
+**## HSM (Hardware Security Module)**
+
+- Used in large-scale environments. Usually clustered together with redundant power.
+- Allows thousands of keys to be stored securely.
+- Usually a plug-in card or separate hardware device. Has key backup.
+- Cryptographic accelerators can also be used for real-time environments.
+
+**## Centralized key management**
+
+- Services are everywhere, so management matters. A centralized key management system lets all keys be managed from one area and kept separate from the data.
+- Can create keys for a specific service or cloud provider, associate keys with specific users, rotate keys on regular intervals, and log key use and other important data.
+
+**## Challenges**
+
+- Keeping data private is hard because data is spread across many systems.
+- Attackers are always finding new techniques — a race to stay ahead.
+- The forms data takes are always changing.
+
+**## Secure enclave**
+
+- Often implemented as a hardware processor, isolated from the main processor. Many different technologies and names for it.
+- Provides extensive security features: its own boot ROM, monitors the boot process, true random number generator, real-time memory encryption, root cryptographic keys, and performs AES encryption on the hard drive.
+
+**## What I mixed up**
+
+- The difference between TPM and HSM: a **TPM** is used on a smaller, local scale, like individual laptops and servers. An **HSM** is an external device used in data centers for high-volume transactions.
