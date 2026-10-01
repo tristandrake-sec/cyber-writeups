@@ -396,3 +396,35 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 **## What I mixed up**
 
 - The difference between TPM and HSM: a **TPM** is used on a smaller, local scale, like individual laptops and servers. An **HSM** is an external device used in data centers for high-volume transactions.
+
+## hashing-and-digital-signatures
+
+**## Hashing**
+
+- A cryptographic hash represents data as a short string of text, like a fingerprint.
+- It's a one-way trip: it's impossible to recover the original message.
+- Provides integrity. You can verify a downloaded document is the same as the original.
+- Example: **SHA-256** gives 256 bits, written as 64 hexadecimal characters.
+- A hash function takes an input of any size and creates a fixed-size string, called a message digest or checksum.
+- Every different input should produce a different hash. If two inputs produce the same hash, that's a **collision**.
+- MD5 has a collision problem, so don't use it for anything important.
+
+**## Practical uses**
+
+- **Verifying a download:** match the hash from the website to the hash of your file.
+- **Password storage:** store the hash instead of the password, so nobody knows your actual password.
+
+**## Salting**
+
+- Salt is extra, often random, info added to further randomize the hash. Every user gets their own bit of salt.
+- **Rainbow tables** are precomputed tables used to reverse hashes.
+- Salted hashes stop rainbow tables from unlocking hashes and finding passwords, and they slow the attacker down. They slow the brute force process.
+
+**## Digital signatures**
+
+- Prove the message wasn't changed (**integrity**), help prove the source (**authentication**), and make sure the signature isn't fake (**non-repudiation**).
+- Made with a **private key** and verified with the matching **public key**.
+
+**## What I mixed up**
+
+- Thought a hash could be used as a digital signature by itself. A bare hash only proves integrity. It becomes a signature when the hash is encrypted with the sender's **private key**, which adds proof of who sent it.
