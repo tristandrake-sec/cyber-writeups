@@ -428,3 +428,143 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 **## What I mixed up**
 
 - Thought a hash could be used as a digital signature by itself. A bare hash only proves integrity. It becomes a signature when the hash is encrypted with the sender's **private key**, which adds proof of who sent it.
+
+## Blockchain
+
+**## What it is**
+
+- Blockchain is a distributed ledger that keeps track of transactions. Everyone has a copy of the ledger, and it's distributed to everyone who wants it.
+- Many practical uses: payment processing, digital identification, supply chain monitoring.
+
+**## How it works**
+
+- A transaction is required for the process. Instead of sending the info to one party, you send it to everyone in the blockchain/ledger.
+- The transaction is added to a larger block, which is then processed.
+- A hash is added to complete the block, which keeps its integrity.
+- The hash is very important. If someone tries to modify the block, the hash is no longer valid, and an invalid hash means the block gets thrown out.
+
+## Certificates
+
+**## Digital certificates**
+
+- A digital certificate contains a digital signature and a public key.
+- A digital signature adds trust. The certificate carries that trust, and a **certificate authority (CA)** adds further trust by signing it.
+- **Web of trust** adds other users for additional trust.
+- Certificate creation can be built into the OS (like Windows) or done through third-party websites.
+- A certificate contains the X.509 format, serial number, version, signature algorithm, issuer, name of the cert holder, public key, extensions, etc.
+
+**## Root of trust**
+
+- Establishing trust with someone trying to gain access is a fundamental part of IT security.
+- One way to provide trust is through a third party: if a third party trusts it, then we can. This overall concept is called the **root of trust**.
+- Can be done through hardware or software, such as an HSM (Hardware Security Module), secure enclave, or CA.
+
+**## Certificate authorities**
+
+- To confirm whether a website can be trusted, we use a CA that has digitally signed the website's certificate. Provides real-time verification.
+- The process a browser uses to trust a website is built into the browser.
+- You can purchase a website certificate and add it to your browser. What you're paying for isn't the certificate itself, it's the validation process the CA goes through.
+
+**## Certificate signing request (CSR)**
+
+- To get a certificate signed, create a key pair, then create a **CSR** containing the public key.
+- The CSR is sent to the CA, which does the validation process, then digitally signs the certificate.
+
+**## Private CA**
+
+- With a private CA, you are your own CA. It's built in-house and devices must trust the internal CA. Common for medium to small companies.
+- You can self-sign certificates for a private CA. They don't have to be signed by a public CA.
+- This requires installing the CA certificate/trusted chain on all devices.
+
+**## SAN and wildcard**
+
+- **SAN (Subject Alternative Name)** is an extension to the X.509 certificate that lists additional identification info. Allows one certificate to support many different domains.
+- **Wildcard certificate** — uses an asterisk in place of the server name and applies to all server names in a domain.
+
+**## Revocation**
+
+- **CRL (Certificate Revocation List)** — a list of all certificates that have been revoked. There are many different reasons to revoke.
+- **OCSP (Online Certificate Status Protocol)** checks a certificate's status in real time. It requires the CA to respond to every client's OCSP request, which doesn't scale well.
+- **OCSP stapling** fixes this. The certificate holder verifies their own status, and the response is "stapled" into the SSL/TLS handshake, which is where the name comes from.
+- Most newer browsers support OCSP.
+
+**## What I mixed up**
+
+- OCSP stapling exists to speed things up and let OCSP scale. Without it, the CA has to respond to every request sent by every client.
+
+## Threat Actors
+
+**## What it is**
+
+- A threat actor is an entity responsible for an event that affects the security of others. Often called a malicious actor.
+- When looking at an attack, it helps to know who the threat actor is so you can understand their goal.
+
+**## Attributes of threat actors**
+
+- **Internal vs external:** sometimes they work for the company and are inside. Others are outside, trying to gain access through public resources.
+- **Resources / funding:** depending on the funding and money they have, you can get a sense of how they're trying to gain access.
+- **Level of sophistication:** ranges from blindly running scripts, to building their own tools and capabilities, to somewhere in the middle.
+
+**## Motivations**
+
+- Data exfiltration
+- Espionage
+- Service disruption
+- Blackmail
+- Financial gain
+- Political reasons
+- Ethical
+- Revenge
+- Disruption/chaos
+- War
+
+**## Types of threat actors**
+
+**Nation state**
+
+- An entire government carrying out an attack.
+- Many possible reasons: data exfiltration, philosophical, revenge, disruption, war.
+- Might have constant attacks and massive resources. Also known as an **APT (Advanced Persistent Threat)**.
+- Very dangerous because they have the financial backing of an entire government.
+- Usually target military control, utilities, and financial control.
+
+**Unskilled attacker**
+
+- Not sophisticated. Runs scripts without any knowledge of how they work. If the script doesn't work, they don't have the skills to understand why.
+- Motivated by the attack itself.
+- Usually external, but can be internal.
+- Usually doesn't have a lot of resources. Looking for the easiest way in.
+
+**Hacktivist**
+
+- A hacker with a purpose: philosophy, revenge, disruption, etc.
+- Often an external attacker, but could potentially be looking to get hired by the company and become an internal attacker.
+- Can be sophisticated and look for very specific hacks, including DoS, website defacing, and private document release.
+- Funding is usually limited, but some organizations will look for fundraising.
+
+**Insider threat**
+
+- Hard to find, and has extensive resources because they have access to all the resources.
+- It's important during the hiring process to avoid hiring someone who becomes a threat.
+- Usually medium sophistication, but dangerous because they know where the resources are.
+
+**Organized crime**
+
+- Categorized by money. Professional criminals who are very sophisticated.
+- Many different people doing very different things in different ways to gain financial gain.
+
+**Shadow IT**
+
+- A group or department that works around the rules.
+- Might build its own infrastructure without anyone knowing. Doesn't have many limitations except the company budget.
+- Usually medium sophistication.
+
+**## What I mixed up**
+
+- Not fully understanding how to categorize the six types of threat actors:
+    - **Nation state:** sophisticated, many resources, external.
+    - **Unskilled attacker:** not sophisticated, few resources, usually external.
+    - **Hacktivist:** can be sophisticated, limited resources, usually external.
+    - **Insider threat:** medium sophistication, many resources, internal.
+    - **Organized crime:** very sophisticated, many resources, usually external.
+    - **Shadow IT:** medium sophistication, limited only by the company budget, usually internal.
