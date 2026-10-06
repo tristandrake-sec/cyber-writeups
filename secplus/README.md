@@ -568,3 +568,121 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
     - **Insider threat:** medium sophistication, many resources, internal.
     - **Organized crime:** very sophisticated, many resources, usually external.
     - **Shadow IT:** medium sophistication, limited only by the company budget, usually internal.
+
+## Common Threat Vectors
+
+**## What it is**
+
+- A threat vector is a method an attacker uses to gain access. Also called an attack vector.
+- Some vectors are more vulnerable than others. IT professionals spend a lot of time protecting existing vectors and finding new ones.
+
+**## Message-based**
+
+- One of the biggest ways attacks begin.
+- Delivered through email (they want you to click a link), phishing, or text messages (SMS).
+- Phishing works very well because it communicates with you directly and wants you to click links that look real but aren't.
+- Malware can be embedded in the message itself, or in what the link downloads.
+- Can also be social engineering, like invoice or crypto scams.
+
+**## Image-based**
+
+- Can be done through **SVG** (Scalable Vector Graphics). The image is described in **XML** (Extensible Markup Language).
+- Attackers can use HTML injection or JavaScript attack code inside the description of the image.
+
+**## File-based**
+
+- **PDF:** a file format that contains other objects, so things can be hidden in it.
+- **ZIP/RAR or any compression file:** can contain many different files.
+- **Microsoft Office:** documents with macros, or add-in files.
+
+**## Voice call**
+
+- **Vishing** (phishing over the phone).
+- Spam over IP: large-scale phone calls.
+- War dialing and call tampering.
+
+**## Removable device (USB)**
+
+- An attacker can get around security products with a USB drive and can infect air-gapped networks.
+- A USB device can act as a keyboard, so the attacker can type on your computer.
+- Makes it very easy to transfer large amounts of data: plug in, copy, remove, and walk away with it.
+
+**## Vulnerable software**
+
+- **Client-based:** infected executables, known or unknown vulnerabilities. May require constant updates.
+- **Agentless:** no installed executable. Compromised software on the server can affect all users, and the client runs a new instance each time.
+- Patching is a great way to prevent attacks, but some systems are unsupported or unpatchable. Even a single system can be an entry point.
+
+**## Unsecure networks**
+
+- The network connects to everything, which makes it easy for an attacker.
+- On wireless, make sure you're running the newest security protocols. Even wired and Bluetooth connections can be a gateway.
+
+**## Open service ports**
+
+- Most network-based services run on UDP and TCP ports. Once a port is open, an attacker can use it as a gateway into that computer.
+- Every application has its own port, which is why port-based firewalls exist as prevention.
+
+**## Default credentials**
+
+- An easy way to gain access. Configure your own credentials.
+- Default credentials are very easy to find, even on websites.
+
+**## Supply chain**
+
+- A way for an attacker to get into an organization's infrastructure by going through a third party.
+- **MSP (Managed Service Provider):** has access to many different customer networks through one location.
+
+**## What I mixed up**
+
+- An air-gapped network still isn't safe from a **USB vector**. An air gap only blocks network access, and a USB drive is carried in physically and plugged in, so it bypasses network-based security. Once it's plugged in, the attacker can copy data off the computer or have the device act like a keyboard and type on it.
+
+## Phishing
+
+**## What it is**
+
+- Phishing is social engineering with a touch of spoofing. It can be delivered by email or text.
+- The goal is usually to extract data from you, like a password or email.
+- Don't be fooled when checking or clicking links. Usually something isn't right. You can spot differences in text font and size, or certain aspects missing.
+
+**## Why it works**
+
+- We trust the sources these emails pretend to be (like Apple). Attackers typically use spoofed email addresses that are very similar to the real domain name.
+- They succeed through tricks and misdirection.
+- **Typosquatting** is a type of URL hijacking.
+- Attackers are good at **pretexting**, which is lying. They act as a character.
+
+**## Financial fraud**
+
+- Someone who gains access can send emails with updated bank info or modify wire transfer details.
+
+**## Variations**
+
+- **Vishing** (voice phishing): done over the phone or by voicemail.
+- **Smishing** (SMS phishing): done through text messages.
+- They can also phish by acting as a CEO or someone higher up.
+
+**## What I mixed up** 
+
+- Phishing, vishing, and smishing differ by **delivery**. Phishing is usually email, vishing is voice calls, and smishing is SMS or text messages.
+- **Pretexting** isn't a fourth type of phishing. It's a technique: fabricating a scenario that gives the victim a reason to hand over information.
+
+## Impersonation
+
+**## What it is**
+
+- **Impersonation** is when an attacker pretends to be someone they're not.
+- A common **pretext** is where they set the trap, made up of an actor and a story.
+- They use some details to gain a level of trust. They may impersonate someone higher up in the company, or use bigger technical terms to make you stop and think about the conversation.
+- The attacker's goal is to elicit information from the victim.
+- Often seen with vishing, and uses well-documented psychological techniques.
+
+**## Identity fraud**
+
+- Another use of impersonation: credit card fraud, bank fraud, loan fraud, or government benefits fraud.
+
+**## Prevention**
+
+- Don't volunteer information, like giving away a password or personal info over the phone, by text, etc.
+- Always verify before revealing info, which can be done through third-party services.
+- This should be a normal process in your company and your life
