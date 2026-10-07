@@ -686,3 +686,71 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 - Don't volunteer information, like giving away a password or personal info over the phone, by text, etc.
 - Always verify before revealing info, which can be done through third-party services.
 - This should be a normal process in your company and your life
+
+## Watering Hole Attacks
+
+**## What it is**
+
+- An attacker gains access to a system that you'll visit later. They poison the "water hole" and let you come to it.
+- Requires the attacker to do some research: understand which third-party sites you visit, then try to gain access to one of them. This requires a vulnerability on the third-party site.
+- They may poison the "water" for all visitors to make sure they catch you.
+
+**## Prevention**
+
+- Use layered defense, also called **defense in depth**. This can include antivirus, a firewall, and multiple layers of security. That's why these are often bundled together.
+
+**## What I mixed up**
+
+- Watering hole vs phishing: in phishing, the attacker reaches out to the victim by email or message. In a watering hole, the attacker targets a third-party site the victim trusts and waits for the victim to come to it. Defense in depth is the answer because no single control can stop it.
+
+## Other Social Engineering Attacks
+
+**## Misinformation / disinformation**
+
+- An effective social engineering attack, used to create confusion and division. Typically seen in politics, and can also be delivered through social media and advertising.
+- How it typically works:
+    - Make fake accounts.
+    - Post content from one of the fake accounts.
+    - Amplify the message through likes and shares.
+    - Real users share the content with other people.
+    - Once it gets enough traction, mass media picks it up and makes its own stories.
+
+**## Brand impersonation**
+
+- Attackers make hundreds or thousands of impersonated sites and direct users to them.
+- Visitors are then shown pop-ups to download malware.
+
+## Memory Injections
+
+**## What it is**
+
+- Malware runs in memory. It doesn't run unless the CPU processes it.
+- Memory contains running processes, including DLLs (Dynamic Link Libraries), threads, buffers, memory management functions, etc.
+- The malware is hidden somewhere: it either runs in its own process, or injects itself into a legitimate process.
+- To inject into a legitimate process, it has to hide itself between the process's starting and ending address. It then gains the same permissions as that process.
+
+**## DLL injection**
+
+- A DLL is a Windows library containing code and data.
+- The attacker puts the path to the malicious DLL somewhere on a storage drive, then gets that path inside the target process.
+- The target process goes out to disk, pulls the malicious DLL into memory, and now the malware is running.
+
+**## What I mixed up**
+
+- Malware hides in a legitimate process because it's harder to detect than a suspicious executable, and it inherits that process's permissions.
+
+## Buffer Overflows
+
+**## What it is**
+
+- A buffer overflow is when an attacker writes more than what's expected into a particular area of memory, and the additional data overflows into another area of memory.
+- Developers need to perform **bounds checking** to make sure this doesn't happen.
+
+**## Why it's hard to pull off**
+
+- Attackers spend a lot of time looking for openings. It isn't a simple exploit: even once you find an opening, it takes time to avoid crashes.
+- The attacker is looking for an overflow that is repeatable and always gives them a function that provides an advantage.
+
+**## What I mixed up**
+
+- Preventing buffer overflows is the developer's job. Bounds checking verifies that input or data length doesn't exceed the allocated buffer size.
