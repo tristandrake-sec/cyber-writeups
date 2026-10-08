@@ -754,3 +754,77 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 **## What I mixed up**
 
 - Preventing buffer overflows is the developer's job. Bounds checking verifies that input or data length doesn't exceed the allocated buffer size.
+
+## Race Conditions
+
+**## What it is**
+
+- A race condition is when two events happen at the same time and the application doesn't account for the fact that they may be running simultaneously.
+- Race conditions can cause big problems.
+
+**## TOCTOU**
+
+- **TOCTOU (Time-of-check to time-of-use)** is a type of race condition.
+- The application checks the system for a value, then later uses that value to carry out a function.
+
+**## Real examples**
+
+- January 2004: the Mars rover "Spirit."
+- Pwn2Own Vancouver 2023: the Tesla Model 3
+
+**## What I mixed up**
+
+- What changes between the check and the use can be a file, permission, path, or system variable. That's a problem because the program then acts on stale or invalid info. Not every race condition is a TOCTOU. To count as one, it has to follow a check-then-use pattern.
+
+## Malicious Updates
+
+**## What it is**
+
+- Always make sure operating systems and applications are updated. But installing an update always carries a security concern, because an attacker can embed malicious code in the patch or update.
+
+**## Best practices**
+
+- Have a backup, and install from a trusted source.
+- Consider your actions every time you download or update, since any installation could be malicious. A random pop-up is a hint that something could be malicious.
+- Visit the developer's site directly. Many operating systems will only allow digitally signed apps.
+- Automatic updates usually have security checks and digital signatures, and carry a high level of trust because the update comes directly from the developer. It's still not a 100% guarantee.
+
+**## Example**
+
+- The **SolarWinds Orion** supply chain attack.
+
+**## What I mixed up**
+
+- A signed automatic update isn't a 100% guarantee, because a signature only verifies the publisher's identity and the file's integrity at the time of signing. In the SolarWinds attack, the attackers compromised the internal build pipeline and put malicious code into the update before it was digitally signed.
+
+## OS Vulnerabilities
+
+**## What it is**
+
+- Operating systems are fundamental computing systems and everyone is running one, which makes them a very attractive target for attackers.
+- They're super complex, with millions of lines of code, which means more opportunities for security issues.
+
+**## Patching**
+
+- Patches usually come once a month. For example, Windows has **Patch Tuesday**, the second Tuesday of each month.
+- Best practice is to always plan to update. It's a race between you and the attackers.
+- Have a backup. If it involves many machines, test before deployment, since a patch may break something.
+
+## SQL Injection
+
+**## Code injection**
+
+- A code injection attack is a common application attack where the attacker puts their own code into information that gets input into the application.
+- This is enabled by bad programming.
+- Examples of injection: HTML, SQL, XML, LDAP, etc.
+
+**## SQL injection**
+
+- **SQL (Structured Query Language)** is the most common language for relational database management systems.
+- **SQLi** works by an attacker putting their own SQL requests into an existing application. Your application shouldn't allow this.
+- Can often be executed in a web browser.
+- Can be very bad: the attacker can get all the database info, delete database info, add users, cause DoS, etc.
+
+**## What I mixed up**
+
+- Preventing SQL injection is the developer's job. The application should treat all user input as untrusted, regardless of the source, and validate it. (Add what you'd do with the input, like parameterized queries, in your own words.)
