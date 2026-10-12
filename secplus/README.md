@@ -828,3 +828,84 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 **## What I mixed up**
 
 - Preventing SQL injection is the developer's job. The application should treat all user input as untrusted, regardless of the source, and validate it. (Add what you'd do with the input, like parameterized queries, in your own words.)
+
+## Cross-Site Scripting
+
+**## What it is**
+
+- **XSS** is the abbreviation used to tell Cross-Site Scripting apart from Cascading Style Sheets (CSS).
+- It was originally called “cross-site” because of security flaws. It’s one of the most common web app vulnerabilities.
+- It takes advantage of the trust the user has in the site, and usually uses JavaScript.
+
+**## How an attack works**
+
+- The attacker sends the victim a link containing a malicious script.
+- The link sends the victim to a legitimate site. The site loads and runs the malicious script as well.
+- The script then sends data back to the attacker, such as session cookies.
+
+**## Non-persistent XSS**
+
+- A website allows scripts to run in user input.
+
+**## Persistent XSS**
+
+- The attacker posts a message to something like a social network. It’s “persistent” because the attacker stores it on the third-party site.
+- There’s no specific target. It hits everyone who visits that site.
+- The attacker may include other code that lets people share the malicious code.
+- **Example:** the Subaru hack. When you log in to Subaru you get a token that never expires, and the token lets you request any service. That let you add your own email to someone else’s car and get full access to it.
+
+**## Protection**
+
+- Don’t click untrusted links.
+- Consider disabling or limiting JavaScript.
+- Keep browsers and applications updated to the newest versions.
+- Validate input.
+
+**## What I mixed up**
+
+- XSS exploits the user’s trust in a site. The script is delivered through the legitimate site but runs in the victim’s browser. A persistent attack hits everyone who visits the site, with no specific target. A non-persistent attack hits whoever clicks the crafted link.
+
+## Hardware Vulnerabilities
+
+**## What it is**
+
+- We’re surrounded by hardware devices where we generally don’t have access to the OS. Since they’re connected to the network, they can be a security risk.
+- Everything is connected (garage doors, refrigerators, etc.), so the security landscape has grown.
+- **Firmware** is software inside the hardware. Vendors are really the only ones who can fix their hardware.
+
+**## EOL vs EOSL**
+
+- **EOL (end of life):** the manufacturer stops selling the product, but you can still receive updates and security patches.
+- **EOSL (end of service life):** support fully stops, and there are no new security patches or updates.
+- Technology reaching EOSL is a significant concern, since security patches are part of normal operation.
+
+**## Legacy platforms**
+
+- Equipment that stays installed for a very long time, and may be running end-of-life software.
+- Determine the risk of running it. It may need extra security protections based on how important the device is, like additional firewalls or IPS signatures.
+
+**## What I mixed up**
+
+- EOSL means support fully stops and patches stop. That makes it worse than EOL, because if an attacker finds a vulnerability, no security patch will ever be released to fix it.
+
+## Virtualization Vulnerabilities
+
+**## What it is**
+
+- Virtualization security is quite different from non-virtual machines, since VMs can appear anywhere.
+- VMs may have different capabilities, memory, and storage, but they’re similar to physical machines.
+- Specific virtualization vulnerabilities: local privilege escalation, command injection, and information disclosure.
+
+**## VM escape**
+
+- A VM is self-contained, but an attacker can escape it. That means breaking out and interacting with the host system or hardware.
+- Once out of the VM, you have great control. This would be a massive exploit.
+
+**## Resource reuse**
+
+- The **hypervisor** manages the relationship between physical and virtual resources, but those resources can be reused between VMs.
+- That means data can be shared between VMs.
+
+**## What I mixed up**
+
+- **VM escape** means breaking out of the VM to interact with the host system or hardware, which is a massive exploit because of the control it gives. **Resource reuse** means the hypervisor reuses physical resources between VMs, so data left behind, like uncleaned memory, can be exposed to another VM.
