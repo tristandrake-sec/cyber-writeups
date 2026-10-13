@@ -909,3 +909,81 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 **## What I mixed up**
 
 - **VM escape** means breaking out of the VM to interact with the host system or hardware, which is a massive exploit because of the control it gives. **Resource reuse** means the hypervisor reuses physical resources between VMs, so data left behind, like uncleaned memory, can be exposed to another VM.
+
+## Cloud Specific Vulnerabilities
+
+**## What it is**
+
+- Cloud adoption is nearly universal, but it comes at a cost: putting sensitive data into the cloud.
+- The issue is that a lot of companies aren’t using the right protections or simple best practices to keep that sensitive data confidential.
+
+**## Common attacks**
+
+- **DoS (denial of service):** a fundamental attack type.
+- **Authentication bypass:** the attacker takes advantage of faulty or weak authentication.
+- **Directory traversal:** manually moving around the structure of the web server, into various folders or subdirectories.
+- **Remote code execution.**
+
+**## Web application exploits**
+
+- These have increased because they’re easy to exploit and the rewards are massive.
+- **XSS (cross-site scripting):** the attacker takes advantage of poor input validation.
+- **Out-of-bounds write:** can cause data corruption, crashing, or code execution.
+- **SQL injection:** gives the attacker direct access to the database.
+
+**## What I mixed up**
+
+- Directory traversal lets an attacker reach files outside the web server’s intended folders. Remote code execution lets an attacker run commands or scripts directly on the server, which gives them control of the system.
+
+## Supply-Chain Vulnerabilities
+
+**## What it is**
+
+- The supply chain is the process of getting raw materials to a consumer: raw materials, suppliers, manufacturers, distributors, customers, and consumers.
+- Attackers can infect any step along the way, and one exploit can infect the entire chain.
+- Service providers often have access to internal services, which is an opportunity for the attacker. Many companies consider ongoing security audits of all providers.
+- **Example:** the 2013 Target Corp. breach, where 40 million credit cards were stolen.
+
+**## Hardware**
+
+- Can you trust your new firewall, server, router, switch, or software? All network traffic flows through switches and routers.
+- The best ways to build trust: a smaller supply base, strict controls over policies and procedures, and security as part of the overall design.
+
+**## Software**
+
+- With software providers, trust is a foundation of security. A digital signature helps with that trust.
+- With updates and patches, ask: how secure are the updates?
+
+**## What I mixed up**
+
+- In the Target breach, the attacker got in through a third-party HVAC supplier. Two ways to reduce that risk: assess third-party vendors, and keep systems like the credit card and HVAC systems on separate networks.
+
+## Misconfiguration Vulnerabilities
+
+**## Open data**
+
+- An easy way to get data into an attacker’s hands is leaving it unsecured, like an open door. This is increasingly common with cloud storage.
+
+**## Admin accounts**
+
+- Unsecured admin accounts: the Linux root account, the Windows Administrator account, also called a superuser account.
+- A misconfiguration can be as simple as a weak password.
+- Best practice: disable direct access to the root account, and protect and minimize root or admin accounts.
+
+**## Insecure protocols**
+
+- Telnet, FTP, SMTP, and IMAP all send data in plaintext. You can verify security with a packet capture.
+- Use the encrypted versions: SSH, HTTPS, SFTP.
+
+**## Default configurations**
+
+- Make sure default usernames and passwords on devices are changed.
+- The **Mirai botnet** takes advantage of default configs.
+
+**## Open ports**
+
+- Limit the open ports others can reach, for example with a firewall. But firewall rulesets add complexity, so always test and audit your firewalls.
+
+**## What I mixed up**
+
+- SFTP replaces FTP and SSH replaces Telnet. You can prove a protocol is leaking data with a packet capture in Wireshark, since Telnet and FTP send data in plaintext while SSH and SFTP are encrypted.
