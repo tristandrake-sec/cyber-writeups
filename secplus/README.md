@@ -987,3 +987,76 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 **## What I mixed up**
 
 - SFTP replaces FTP and SSH replaces Telnet. You can prove a protocol is leaking data with a packet capture in Wireshark, since Telnet and FTP send data in plaintext while SSH and SFTP are encrypted.
+
+## Mobile Device Vulnerabilities
+
+**## What it is**
+
+- Mobile devices are challenging to secure. They often need additional security policies and systems.
+- They’re easily hidden, always moving, contain sensitive info (personal and organizational), and are constantly connected to the internet.
+
+**## Jailbreaking / rooting**
+
+- Mobile devices are purpose-built systems, but the OS can be replaced through jailbreaking or rooting. This replaces the OS with a third-party OS.
+- It provides uncontrolled access and circumvents the security features that were in place.
+
+**## Sideloading**
+
+- Installing apps from outside the allowed app store and its security checks.
+- Installing malicious apps can be a significant security concern. The OS typically manages which sources apps can be installed from.
+
+**## What I mixed up**
+
+- **Jailbreaking/rooting** replaces the device’s OS with a third-party OS, which gives uncontrolled access and circumvents the built-in security features. **Sideloading** installs apps from outside the allowed app store, which skips its security checks. Both are risky because malicious content can get onto the device.
+
+## Zero-Day Vulnerabilities
+
+**## What it is**
+
+- Many applications have vulnerabilities. Every day, people are trying to find unknown vulnerabilities before attackers do.
+- Attackers are constantly looking for unknown vulnerabilities, and they won’t share what they find with the vendor.
+- From the vendor’s perspective there is no vulnerability, so there’s no patch. This is called a **zero-day attack**: an attack with no patch or method of mitigation.
+
+**## Example**
+
+- From the CVE website: the Chrome browser in April 2023, which had memory corruption and a sandbox escape.
+
+**## What I mixed up**
+
+- A zero-day is a vulnerability the vendor doesn’t know about, so no patch exists. The “zero” refers to the days the vendor has had to fix it. The vendor can’t patch it because, from their point of view, there’s no vulnerability, and attackers don’t share what they find.
+
+## Malware Overview
+
+**## What it is**
+
+- Malware is any malicious software. It can gather info, show you advertising, or be a virus or worm.
+- Examples: viruses, worms, ransomware, trojan horse, rootkit, keylogger, spyware, bloatware, logic bomb.
+- Malware isn’t one single event. The pieces work together.
+- To infect your system, malware has to find a way to run a program, whether through an email, a pop-up, a drive-by download, or a worm.
+- Malware exists because the data we have is very valuable, both personal and organizational.
+
+**## Ransomware**
+
+- A particularly nasty kind of malware. It encrypts your data files, like photos, movies, and documents.
+- The OS keeps working normally, so you may not know you’ve been infected until your files are locked.
+- Attackers usually demand money in exchange for the decryption key.
+- **Protection:** keep an offline backup, keep the OS and applications up to date, and keep antivirus/malware signatures up to date.
+
+## Viruses and Worms
+
+**## Viruses**
+
+- A virus is malware that can replicate itself. It reproduces through the file system or the network, and may or may not cause problems.
+- Antivirus is very common on the operating systems we use.
+- **Types:** program viruses, boot sector viruses, script viruses, macro viruses.
+- **Fileless virus:** does a great job of avoiding antivirus. It operates in memory but is never installed in a file or application.
+
+**## Worms**
+
+- Malware that self-replicates. It doesn’t need you to do anything, uses the network as its transmission, and spreads quickly.
+- Very bad, since they can take over systems very quickly.
+- Firewalls and IDS/IPS can mitigate many worm infections, but they don’t help much once the worm is inside.
+
+**## What I mixed up**
+
+- A virus needs human interaction to spread, but a worm self-replicates over the network without any. Firewalls and IDS/IPS help before a worm gets in, since they watch traffic coming in from outside. Once it’s inside, they struggle to catch it moving between internal systems.
