@@ -1060,3 +1060,94 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 **## What I mixed up**
 
 - A virus needs human interaction to spread, but a worm self-replicates over the network without any. Firewalls and IDS/IPS help before a worm gets in, since they watch traffic coming in from outside. Once it’s inside, they struggle to catch it moving between internal systems.
+
+## Spyware and Bloatware
+
+**## Spyware**
+
+- Malware that spies on you and watches everything on your system.
+- It can trick you into installing it, and it’s very good at browser monitoring.
+- May install keyloggers, where every keystroke is captured and sent back to the attacker in a file.
+- **Protection:** keep your antivirus/anti-malware up to date, always understand what you’re installing, keep a known good backup, and run scans with third-party software.
+
+**## Bloatware**
+
+- Shows up on new devices like computers or phones: unexpected applications installed by the manufacturer, which can use up valuable storage.
+- **Managing it:** identify and remove it through the built-in installer, the app’s own uninstaller, or third-party software.
+
+## Other Malware Types
+
+**## Keyloggers**
+
+- Keystrokes contain valuable info like passwords and email messages.
+- Keyloggers circumvent encryption protections. They can do a lot more too: take screenshots, capture stored messages, and record anything searched in a search engine.
+
+**## Logic bomb**
+
+- Waits for a particular event or time to occur. It can reboot a system or erase data, and it’s difficult to identify.
+- **Prevention:** set up and configure processes and procedures, use electronic monitoring, and audit constantly.
+
+**## Rootkit**
+
+- Originally a Unix technique.
+- Generally hides itself in the kernel, as part of the OS, which makes it hard to identify with typical anti-malware. It also modifies core system files.
+- Not all rootkits are part of the OS. Some run as a traditional process.
+- **Finding and removing:** look for the unusual, use a remover specific to that rootkit, and use Secure Boot with UEFI.
+
+**## What I mixed up**
+
+- A keylogger gets around encryption because it captures the data at the point of entry, before any encryption happens.
+- A rootkit hides in the kernel as part of the OS and modifies core system files, so typical anti-malware doesn’t find it. Secure Boot with UEFI helps because it blocks unverified code from loading at startup.
+
+## Physical Attacks
+
+**## What it is**
+
+- Old-school security: no keyboards, mice, or command line.
+- If you have physical access to a server, you have full control. Door locks only keep out the honest people.
+
+**## Brute force (physical edition)**
+
+- An attacker physically pushes through a door or window to gain access.
+
+**## RFID cloning**
+
+- **RFID** is the underlying technology of access badges and key fobs.
+- RFID cloning can get you access, it’s cheap and easy to find the equipment, and duplicating a badge takes seconds.
+- This is another reason we have **MFA (multi-factor authentication)**.
+
+**## Environmental attacks**
+
+- Attacks on the surrounding environment, like shutting off power to a data center, or attacking the HVAC or fire suppression systems.
+
+**## What I mixed up**
+
+- MFA reduces the risk of RFID cloning because a cloned badge is only one factor. The attacker would also have to get another independent form of identification.
+
+## Denial of Service
+
+**## What it is**
+
+- DoS occurs when an attacker forces a service to fail.
+- Reasons: taking advantage of a design failure or vulnerability, causing a system to fail for a competitive advantage, or creating a smokescreen for another vulnerability.
+
+**## Friendly DoS**
+
+- Unintentional. Examples:
+    - **Network:** a layer 2 loop without STP (Spanning Tree Protocol).
+    - **Bandwidth:** downloading multi-gigabyte Linux distros over a DSL line.
+    - A water line breaks.
+
+**## DDoS (Distributed Denial of Service)**
+
+- Launched with an army of computers to bring down a service.
+- Attackers typically have **botnets**: networks of computers controlled by the attacker.
+- Also described as an **asymmetric** attack.
+
+**## Reflection and amplification**
+
+- A small attack turns into a big attack. It’s possible because attackers take advantage of internet services available to anyone.
+
+**## What I mixed up**
+
+- A DoS comes from a single source, and a DDoS is distributed across many sources. A friendly DoS is still a DoS because the service is denied regardless of intent.
