@@ -1151,3 +1151,69 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 **## What I mixed up**
 
 - A DoS comes from a single source, and a DDoS is distributed across many sources. A friendly DoS is still a DoS because the service is denied regardless of intent.
+
+## DNS Attacks
+
+**## DNS poisoning**
+
+- Modifying the DNS server itself. Requires some crafty hacking.
+- Another form: modifying the **host file** on the client computer. Requires access plus elevated rights.
+- Another form: sending a fake response to a valid DNS request. Requires the attacker to sit in between the conversation in real time.
+
+**## Domain hijacking**
+
+- Another way to affect DNS is to gain access to the **domain registration**, which gives the attacker control of the traffic flow.
+- Ways to get in: brute force, social engineering the password, gaining access to the email address tied to the person who manages the account, etc.
+
+**## URL hijacking**
+
+- Another way to direct users to a malicious site. The attacker can make money off your mistakes:
+    - Sell the badly spelled domain to the actual owner.
+    - Redirect traffic to competitors of the legitimate site.
+    - Use it as a phishing site.
+    - Infect visitors with a drive-by download.
+- Types include **typosquatting** and **brandjacking**.
+
+**## What I mixed up**
+
+- DNS poisoning gives users a wrong answer for a name, by modifying the DNS server, editing the client’s host file, or sending a fake response to a valid request. Domain hijacking gets control of the domain registration, so the attacker controls where all traffic for that domain goes.
+
+## Wireless Attacks
+
+**## Deauthentication**
+
+- A wireless deauthentication attack is a type of DoS attack that completely disconnects a device from the wireless network.
+- The main vulnerability is the **management frames** sent between the access point and devices. Management frames are very important for wireless connectivity (802.11 networks).
+- **Protection:** newer standards (you noted 802.11ac) now encrypt management frames. But not every management frame is encrypted, such as authentication frames.
+
+**## RF jamming**
+
+- Attacks all devices trying to communicate over the wireless network.
+- Accidental disruption is called **interference**, not jamming. Jamming is intentional.
+- Types: constant random bits, constant legitimate frames, random timing, or **reactive** (based on noise).
+- To perform it, the attacker needs to be close to the access point. Finding the source of the jamming is known as a **fox hunt**.
+
+**## What I mixed up**
+
+- Deauth exploits management frames to disconnect devices from the wireless network. Jamming interferes with the radio signal itself. Encrypting management frames helps against deauth but not jamming, because jamming doesn’t rely on exploiting those frames.
+
+## On-Path Attacks
+
+**## On-path attack**
+
+- Lets an attacker sit between two devices and watch all the traffic going back and forth. Also known as a man-in-the-middle attack.
+- The attacker can redirect or modify your traffic.
+
+**## ARP poisoning (spoofing)**
+
+- ARP has no security, so ARP poisoning is an on-path attack on the local IP subnet.
+
+**## On-path browser attack**
+
+- The attacker performs the on-path attack on the same device as the victim. Malware or a Trojan does all the proxy work.
+- Even if the network traffic is encrypted, the malware sees all the info in plaintext, since it’s on the same device as the victim.
+- The malware waits for you to enter your credentials and gains access to them. It can also create sessions behind you that you’d have no idea about.
+
+**## What I mixed up**
+
+- In an on-path attack, the attacker sits on the network between two devices. In an on-path browser attack, the attacker sits on the victim’s own device through malware. Encryption doesn’t stop the browser version because the malware sees the data in plaintext on the same device.
