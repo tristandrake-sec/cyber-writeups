@@ -1217,3 +1217,82 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 **## What I mixed up**
 
 - In an on-path attack, the attacker sits on the network between two devices. In an on-path browser attack, the attacker sits on the victim’s own device through malware. Encryption doesn’t stop the browser version because the malware sees the data in plaintext on the same device.
+
+## Replay Attacks
+
+**## What it is**
+
+- Useful info is transmitted over the network, and a crafty attacker will take advantage of that.
+- To perform a **replay attack**, the attacker needs access to the raw network data. They may get it through a network tap or ARP poisoning.
+- This is not an on-path attack.
+
+**## Pass the hash**
+
+- A form of replay attack.
+- When someone sends a normal authentication request to the server, the attacker captures the authentication and gets the credentials.
+- The attacker replays the credentials to the server. Now they have access to the server, posing as the original person.
+- **Defense:** salt or encryption.
+
+**## Cookies and session IDs**
+
+- Attackers also want your cookies and session IDs. Cookies are used for tracking, personalization, and session management, and could be considered a privacy risk.
+- Session IDs are often stored in the cookie. If the attacker gets the session ID, they pose as the victim.
+
+**## Header manipulation**
+
+- Attackers can gather header info with Wireshark, exploit through cross-site scripting, modify headers, and modify cookies.
+- **Prevention:** encrypt everything, from start to destination.
+
+**## What I mixed up**
+
+- In an on-path attack, the attacker sits in the middle of the conversation. In a replay attack, the attacker captures the data once, then resends it to the server later, posing as the original sender. Salt helps against pass the hash because the authentication data is different each time it’s sent, so a captured copy is useless when replayed.
+
+## Malicious Code
+
+**## What it is**
+
+- Attackers can use many things to exploit a vulnerability: social engineering, default credentials, misconfigurations. These don’t require a huge amount of technical skill.
+- Malicious code takes many forms: executables, scripts, macro viruses, worms, trojan horses, etc.
+- Since there are many ways to attack, we use many protections: firewalls, anti-malware, patches and updates.
+
+**## Example**
+
+- The **WannaCry** ransomware.
+
+## Application Attacks
+
+**## Injection**
+
+- Very common. Code injection is caused by bad programming. Many forms: HTML, SQL, XML, LDAP, etc.
+
+**## Buffer overflow**
+
+- Overwriting a buffer of memory, or spilling over.
+- Not an easy exploit, and once again caused by developers not performing checks. The really useful kind of buffer overflow is repeatable.
+
+**## Replay attack**
+
+- Needs raw network data. Not an on-path attack.
+
+**## Privilege escalation**
+
+- Gaining higher-level access to a system, meaning more capabilities. Very common and high priority for attackers.
+- **Horizontal privilege escalation:** not moving up, but going from one user’s access to another’s.
+- **Mitigation:** patch quickly, keep antivirus/anti-malware updated, use **DEP (data execution prevention)**, and use **ASLR (address space layout randomization)**.
+
+**## Cross-site request forgery (CSRF)**
+
+- Cross-site requests are common and legitimate. Websites are separated into client-side and server-side code. Client side is usually HTML/JavaScript, server side usually HTML/PHP. Attackers can take advantage of this difference, which is known as cross-site request forgery.
+- Also called a **one-click attack** or **session riding**.
+- It takes advantage of the trust the web application has in the user.
+
+**## Directory traversal / path traversal**
+
+- Not an application vulnerability, but a web server vulnerability. It lets the attacker read files outside the website’s file directory.
+- Sometimes it’s a software vulnerability inside the web server, or a vulnerability in application code.
+
+**## What I mixed up**
+
+- XSS abuses the user’s trust in the site. CSRF abuses the site’s trust in the user.
+- Vertical privilege escalation jumps to a higher role like admin. Horizontal goes from one user’s access to another’s.
+- DEP marks memory regions as non-executable. ASLR randomizes memory addresses so an attacker can’t predict where things load.
