@@ -1296,3 +1296,81 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 - XSS abuses the user’s trust in the site. CSRF abuses the site’s trust in the user.
 - Vertical privilege escalation jumps to a higher role like admin. Horizontal goes from one user’s access to another’s.
 - DEP marks memory regions as non-executable. ASLR randomizes memory addresses so an attacker can’t predict where things load.
+
+## Cryptographic Attacks
+
+**## What it is**
+
+- The difference between data being secure or insecure is the key. Instead of getting the key, attackers try to break the safe.
+- Attackers often focus on the implementation of the cryptography, since it’s usually the weakest component.
+
+**## Birthday attack**
+
+- A form of cryptographic attack. In a group of 30 students, there’s about a 70% chance two share a birthday. In the digital world, the same math applies to hashes.
+- The attacker looks for a **hash collision** using brute force.
+- A larger hash output size makes this much harder.
+- Hash digests are supposed to be unique, but collisions were found with **MD5**.
+
+**## Downgrade attack**
+
+- Forces the two systems that are communicating to downgrade their security.
+- A common form is **SSL stripping**, an on-path attack that strips the S from HTTPS. This leaves the victim’s browser connection unencrypted.
+
+**## What I mixed up**
+
+- A birthday attack looks for two different inputs that produce the same hash, which is a collision. A larger hash output makes collisions less likely. MD5 is a problem because collisions have actually been found.
+- SSL stripping is both an on-path attack, because the attacker sits in the middle, and a downgrade attack, because it pushes the connection from HTTPS to unencrypted HTTP.
+
+## Password Attacks
+
+**## Storing passwords**
+
+- Never store passwords in plaintext, but some applications still do. If an application stores them in plaintext, get a new application.
+- All passwords should be stored as a hash, so there’s no way to reverse a password from only the hash.
+- **SHA-256** is now used instead of MD5.
+
+**## Password spraying**
+
+- The attacker tries the most common passwords across accounts, without getting locked out, raising concern, or setting off flags.
+
+**## Brute force**
+
+- Trying every possible combination until the hash is matched. Time-consuming.
+- **Online:** most accounts eventually lock out after many attempts.
+- **Offline:** attackers do this instead, against the captured hash. They can spend any amount of time and attempts until the hash matches.
+
+**## What I mixed up**
+
+- Brute force avoids lockouts by running offline on the attacker’s own hardware against a captured hash, so they can try as many passwords as they need. Spraying avoids lockouts by trying a few common passwords against many different accounts instead of many passwords against one.
+
+## Indicators of Compromise
+
+**## What it is**
+
+- An **IOC (indicator of compromise)** is an event that indicates an intrusion.
+- Examples: an unusual amount of traffic, changes to file hashes, irregular international traffic, changes to DNS data, unusual login patterns, spikes in read requests to certain files.
+
+**## Account indicators**
+
+- **Account lockout:** a telling indicator, especially with too many login attempts. An account can also be locked out **administratively**, which is a bigger concern and can be part of a larger plan.
+- **Concurrent session usage:** you can’t be in two places at once. Signs are multiple logins from multiple locations.
+- **Authentication logs:** logins from parts of the world the user couldn’t have traveled to are easy to spot.
+
+**## System indicators**
+
+- **Blocked updates:** attackers want to stay logged in as long as possible. Malware usually disables anti-malware and antivirus updates to stay on the system. If you can’t update, that’s usually a sign of compromise.
+- **Resource consumption:** there’s always something an attacker is doing that you should be able to identify, like transferring files. Firewall logs should show the outgoing transfer.
+- **Resource inaccessibility:** a server is down, a network disruption, or a server outage. Also data that isn’t usually encrypted suddenly is.
+
+**## Log indicators**
+
+- **Out-of-cycle logging:** activity at an unexpected time, like security patches happening outside the scheduled time. Common in firewall logs.
+- **Missing logs:** attackers delete log info to hide the compromise, since logs may incriminate them.
+
+**## Leaked data**
+
+- A very clear sign of compromise is private organizational data appearing on the public internet, typically done with ransomware.
+
+**## What I mixed up**
+
+- An administrative lockout is a bigger concern than a failed-attempt lockout because it means someone with admin rights deliberately locked the account, which can be part of a larger plan. Malware blocks anti-malware updates so it can stay on the system as long as possible.
