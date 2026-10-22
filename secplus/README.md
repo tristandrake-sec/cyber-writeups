@@ -1374,3 +1374,109 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 **## What I mixed up**
 
 - An administrative lockout is a bigger concern than a failed-attempt lockout because it means someone with admin rights deliberately locked the account, which can be part of a larger plan. Malware blocks anti-malware updates so it can stay on the system as long as possible.
+
+## Segmentation and Access Control
+
+**## Segmentation**
+
+- To limit the scope of any security event, segment your network into different pieces.
+- Can be **physical**, **logical**, or **virtual** segmentation.
+- Also done for performance optimization. Sometimes it’s required for compliance, as **mandated segmentation**.
+
+**## ACLs (access control lists)**
+
+- An easy way to segment. Used to allow or deny traffic and to restrict access to network devices. Be very careful when configuring ACLs.
+- Examples: one person is allowed to read, one is allowed to access the network, and one is allowed on the network only through certain ports.
+- Many operating systems use ACLs for file access.
+
+**## Application allow / deny lists**
+
+- Many applications have an allow/deny list, which can be done through a security policy.
+- **Allow list:** only the listed applications can run. **Deny list:** anything can run except what’s on the list.
+- Examples of what a list can be based on: application hash, certificate, path, and network zone.
+
+**## What I mixed up**
+
+- Segmentation limits the scope of a security event by splitting the network into pieces, so a problem doesn’t hit everything. Two other reasons to do it are performance optimization and compliance requirements.
+
+## Mitigation Techniques
+
+**## What it is**
+
+- Mitigation is the process of reducing the impact of a security event or a potential security event.
+
+**## Patching**
+
+- Incredibly important, and it helps keep your system more stable.
+- Can be monthly updates, third-party updates, auto updates, or emergency **out-of-band** updates.
+
+**## Encryption**
+
+- Prevents access to application data files. Types: file-level encryption, **FDE (full disk encryption)**, and application data encryption.
+
+**## Monitoring / logging**
+
+- Done through devices like switches, servers, routers, and firewalls, or through built-in sensors.
+- Logs are often consolidated into one place, like a **SIEM**.
+
+**## Least privilege**
+
+- Rights and permissions should be set to a minimum.
+- All user accounts should be limited, and users shouldn’t be able to run administrative privileges.
+
+**## Enforce configuration**
+
+- Perform a **posture assessment**: an extensive check for the OS patch version, **EDR (endpoint detection and response)** version, firewall status, and certificate status.
+- Systems that are out of compliance are quarantined.
+
+**## Decommissioning**
+
+- Should follow a formal policy. Don’t throw your data in the trash.
+
+**## What I mixed up**
+
+- A posture assessment checks a device against preconfigured policies: OS patch version, EDR version, firewall status, and certificate status. Systems that fail are quarantined.
+
+## Hardening Techniques
+
+**## Operating systems (Windows / Linux)**
+
+- Keep updates current.
+- Secure user accounts with a password policy and limited access.
+- Limit network access and security.
+- Monitor and secure with antivirus/anti-malware.
+
+**## Encryption**
+
+- Encrypt application data files, use FDE, and encrypt all network traffic through a VPN.
+
+**## Endpoints**
+
+- Think about the many different devices that need hardening, and apply hardening based on that.
+
+**## EDR (endpoint detection and response)**
+
+- Detects threats in different ways: signatures, behavior analysis, machine learning, and process monitoring, with a lightweight agent on the endpoint.
+- Can do root cause analysis on the threat.
+- Can respond immediately: isolate the system, quarantine the threat, and roll back to a previous config. This can all be done through an API, with no user or technician needed.
+
+**## Host-based firewall**
+
+- A software-based firewall. Allows or denies incoming or outgoing application traffic, and identifies and blocks unknown processes.
+
+**## HIPS (host-based intrusion prevention system)**
+
+- Recognizes and blocks known attacks, secures OS and application configs, and is often built into endpoint protection software.
+- Looks for signatures, behavioral changes, buffer overflows, registry changes, and modified files.
+
+**## Ports and software**
+
+- Every open port is an entry point, so close everything except the required ports. You can control access through a firewall.
+- Use **nmap** to see whether certain ports are open or closed.
+- Change default passwords, or add extra security through an additional logon or third-party authentication.
+- Remove unnecessary software, since every piece of software has a bug, known or unknown.
+
+**## What I mixed up**
+
+- **Host-based firewall** allows or denies incoming and outgoing application traffic and blocks unknown processes. **HIPS** recognizes and blocks known attacks by watching for signatures, behavior changes, buffer overflows, registry changes, and modified files. **EDR** detects threats, does root cause analysis, and responds automatically by isolating the system, quarantining the threat, or rolling back to a previous config.
+- Closing unneeded ports and removing unnecessary software are the same idea: allow only what’s necessary and close or remove everything else, which reduces the attack surface.
