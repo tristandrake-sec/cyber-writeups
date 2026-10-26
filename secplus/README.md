@@ -1480,3 +1480,69 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 
 - **Host-based firewall** allows or denies incoming and outgoing application traffic and blocks unknown processes. **HIPS** recognizes and blocks known attacks by watching for signatures, behavior changes, buffer overflows, registry changes, and modified files. **EDR** detects threats, does root cause analysis, and responds automatically by isolating the system, quarantining the threat, or rolling back to a previous config.
 - Closing unneeded ports and removing unnecessary software are the same idea: allow only what’s necessary and close or remove everything else, which reduces the attack surface.
+
+## Cloud Infrastructure
+
+**## Responsibility matrix**
+
+- The cloud responsibility matrix covers IaaS, PaaS, SaaS, etc.
+- Security responsibilities should be well documented, and they can vary. Each one is managed by either the customer or the provider.
+
+**## Hybrid cloud**
+
+- Private plus public. Provides more flexibility but adds more complexity.
+- **Mismatches in protection** can happen across platforms: authentication, firewall configs, server settings.
+- It can also be difficult to manage logs from various providers.
+- Each time data moves from one provider to another, there can be data leakage, since it crosses the public network.
+
+**## Third-party risk**
+
+- Third-party attacks are a risk. Mitigations: ongoing vendor risk assessments, including third-party impact in incident response, and constant monitoring.
+
+**## Infrastructure as code (IaC)**
+
+- Used to describe an infrastructure. It lets you modify it and create versions, and use the code to build other application instances.
+
+**## FaaS (function as a service)**
+
+- Applications are separated into individual, autonomous functions. It removes the OS from the equation.
+- Most of the work with serverless architecture happens in the cloud.
+
+**## Monolithic applications**
+
+- One big application that does everything: user interface, business logic, data input and output.
+- This can create code challenges, since you have a massive codebase.
+
+**## APIs**
+
+- API stands for application programming interface.
+- APIs are the glue for the microservices and make the application much more scalable and resilient.
+
+**## What I mixed up**
+
+- In IaaS the customer manages more, and in SaaS the provider manages more. Documentation matters because it removes confusion about who owns which controls.
+- Hybrid cloud adds complexity because of mismatches in protection (authentication, firewall configs, server settings) and scattered logs. The data leakage risk comes from data crossing the public network when it moves between providers.
+- A monolith is one huge codebase, which makes changes hard. APIs are the glue that lets independent microservices communicate, which makes the application more scalable and resilient.
+
+## Network Infrastructure
+
+**## Physical isolation**
+
+- Two devices are physically separate. If they need to communicate, they have to be connected in some way.
+- Separate devices mean multiple units and separate infrastructure.
+
+**## VLANs**
+
+- A VLAN (virtual local area network) lets you configure interfaces on your switch.
+- VLANs can’t communicate with each other without a layer 3 device or router.
+
+**## SDN (software-defined networking)**
+
+- Networking devices have different planes of function: data, control, and management.
+- **Data plane:** processes network frames and packets. Does the forwarding, trunking, encrypting, and NAT.
+- **Control plane:** manages the actions of the data plane. Routing tables, session tables, NAT tables.
+- **Management plane:** configures and manages the device, through SSH, a browser, or an API.
+
+**## What I mixed up**
+
+- VLANs need a layer 3 device or router to communicate because each VLAN is its own separate network configured on a layer 2 switch. The control plane manages the data plane’s actions (routing, session, and NAT tables), and the management plane is how admins configure the device.
