@@ -1546,3 +1546,127 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 **## What I mixed up**
 
 - VLANs need a layer 3 device or router to communicate because each VLAN is its own separate network configured on a layer 2 switch. The control plane manages the data plane’s actions (routing, session, and NAT tables), and the management plane is how admins configure the device.
+
+## Other Infrastructure Types
+
+**## Cloud vs on-premises**
+
+- There are two main categories for IT security.
+- **Cloud security:** centralized and costs less.
+- **On-premises:** puts the security burden on the client and costs more. You can customize your security posture, an on-site IT team can manage security better, and a local team maintains uptime and availability. But security changes can take time.
+
+**## Centralized vs decentralized**
+
+- Most organizations are decentralized, but it’s hard to maintain security with so many devices in different places.
+- A **centralized** approach allows correlated alerts, consolidated log file analysis, and a comprehensive status (maintenance and patching).
+- Drawbacks: it creates a single point of failure and can cause scalability concerns.
+
+**## Virtualization and containers**
+
+- Virtualization lets you run different systems and build or tear them down whenever you want. Each application needs its own OS, so it’s relatively expensive.
+- To address virtualization’s inefficiencies, some organizations move to **containerized** environments, which let you run multiple applications on the same hardware.
+- Every container is an isolated process in a sandbox.
+
+**## IoT**
+
+- Internet of Things: sensors, smart devices, wearable technology, facility automation.
+- Convenient, but with weak security defaults.
+- A single exploited IoT device can affect your whole network.
+
+**## SCADA / ICS**
+
+- **SCADA:** Supervisory Control and Data Acquisition. **ICS:** Industrial Control Systems.
+- Computers manage this equipment, and it uses distributed control systems. These systems need to be segmented for security purposes.
+
+**## RTOS**
+
+- **Real-time operating system:** an OS with a deterministic processing schedule, with no time to wait for other processes.
+- Extremely sensitive to security issues, and very self-contained.
+
+**## Embedded systems**
+
+- Hardware and software designed for a specific function, built with only that task in mind.
+
+**## High availability**
+
+- One way to provide uptime. Redundancy doesn’t always mean availability.
+- **HA (high availability)** may involve many different components working together. Higher availability usually means higher costs.
+
+**## What I mixed up**
+
+- Centralizing security makes maintenance and patching easier but creates a single point of failure. On-premises gives more control but puts the security burden on my own team, and security changes can take time.
+- A container avoids needing a full guest OS for each application. Each container is an isolated process in a sandbox.
+
+## Infrastructure Considerations
+
+**## Resilience**
+
+- Eventually something will happen. How quickly can we recover?
+- Depends on many variables: the root cause, replacement hardware installation, software patches, redundancy systems.
+- **MTTR** stands for mean time to repair.
+
+**## Cost**
+
+- How much money is required? Initial installation cost can be very different across platforms.
+- Also: ongoing maintenance, replacement or repair costs, and tax implications.
+
+**## Responsiveness**
+
+- How quickly can we get a response? Speed is a very important metric, especially for interactive applications.
+
+**## Scalability**
+
+- How quickly can we increase or decrease capacity? This is also called **elasticity**.
+- There’s always a resource challenge with scalability, and it needs to include security monitoring.
+
+**## Ease of deployment**
+
+- An application has many moving parts: a web server, database, caching server, and firewall.
+- Deployment might be an involved process because of hardware resources, cloud budgets, and change control, or it might be simple with something cloud-based.
+
+**## Risk transference**
+
+- Transferring the risk to a third party.
+- **Cybersecurity insurance** can help with recovering internal losses and with protection against legal issues from customers.
+
+**## Ease of recovery**
+
+- Time is money. How fast can you recover?
+
+**## Patch availability**
+
+- Software isn’t usually static, and patching is often the first task after installation.
+
+**## Inability to patch**
+
+- Can include embedded systems like HVAC controls. Consider adding extra security around unpatchable devices.
+
+**## What I mixed up**
+
+- Embedded systems like HVAC controls can’t be patched easily, so they need extra security around them, such as additional firewalls. Transferring risk can mean buying cyber insurance or moving it to a third party.
+
+## Secure Infrastructures
+
+**## What it is**
+
+- Every network is different, but there are some similarities.
+- **Firewalls** separate trusted from untrusted and provide additional security checks.
+
+**## Security zones**
+
+- More flexible and more secure than an IP address range.
+- Each area of the network is associated with a zone, like untrusted/trusted or internal/external.
+- This simplifies security policies and makes them easier to maintain.
+
+**## Attack surface**
+
+- Think about how an attacker might get in. Ways include application code, open ports, the authentication process, and human error. This is the **attack surface**.
+- It should be minimized by auditing, blocking ports, and monitoring traffic in real time.
+
+**## Network connectivity**
+
+- Integrating security into network connectivity is essential. Options: secure network cabling, application-level encryption, and network layer encryption.
+
+**## What I mixed up**
+
+- The attack surface is every way an attacker might get in: application code, open ports, the authentication process, and human error. It’s minimized by auditing, blocking ports, and monitoring traffic in real time.
