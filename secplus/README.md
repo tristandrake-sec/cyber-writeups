@@ -1670,3 +1670,83 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 **## What I mixed up**
 
 - The attack surface is every way an attacker might get in: application code, open ports, the authentication process, and human error. It’s minimized by auditing, blocking ports, and monitoring traffic in real time.
+
+## Intrusion Prevention
+
+**## IPS vs IDS**
+
+- An **IPS** watches traffic traverse the network in real time. Intrusions may include exploits against the OS or applications, buffer overflows, and XSS.
+- An **IDS (intrusion detection system)** can’t block anything. It only alarms.
+
+**## Fail open vs fail closed**
+
+- **Fail open:** data continues to flow even though the device failed, with no security processes running.
+- **Fail closed:** data doesn’t continue to flow.
+- Fail open is essential to think about when a device is inline or doing active monitoring.
+
+**## Passive vs inline**
+
+- **Passive monitoring:** devices communicate normally through a switch, and the switch sends a copy of the traffic to the IPS. Data can’t be blocked in real time, but it doesn’t cause downtime.
+- **Inline:** when an IDS/IPS sits inline, all traffic passes through it.
+
+**## What I mixed up**
+
+- Fail open keeps data flowing with no security processes running. Fail closed stops the data flow. A passive monitoring device gets a copy of the traffic from the switch, so it can’t block in real time, but it causes no downtime because the real traffic doesn’t pass through it.
+
+## Network Appliances
+
+**## Jump server**
+
+- Provides an access mechanism to a protected network. It’s inside the network and accessible from the outside.
+- Highly secured, and a major security concern.
+- People SSH, tunnel, or VPN to the jump server.
+
+**## Proxies**
+
+- Sit between the users and the external network. A proxy receives the user’s request and sends it on their behalf.
+- Useful for caching, access control, URL filtering, and content scanning.
+- **Explicit:** applications need to know how to use the proxy. **Transparent:** some proxies are invisible.
+- One of the simplest proxies is **NAT**, a network-level proxy.
+- Most proxies are **application proxies**. They may know only one application or a few, like HTTP, HTTPS, and FTP.
+- **Forward proxy (internal proxy):** commonly used to protect and control user access to the internet.
+- **Reverse proxy:** controls inbound traffic from the internet to your internal service.
+- **Open proxy:** a third-party, uncontrolled proxy. A massive security concern, and often used to circumvent existing security controls.
+
+**## Load balancer**
+
+- Distributes the load across multiple servers, usually in large-scale implementations. Also provides fault tolerance, so server outages have no effect.
+- **Active/active:** many are configured this way. It can distribute the load, perform TCP offload and SSL offload, provide caching, prioritize traffic, and do content switching.
+- **Active/passive:** some servers are active while others are on standby. If an active server fails, a passive one takes over.
+
+**## Sensors and collectors**
+
+- They aggregate info from network devices.
+- Data from sensors, like authentication logs, is sent to a collector, which feeds one database through a **SIEM**.
+
+**## What I mixed up**
+
+- A forward proxy controls and protects user access to the internet. A reverse proxy controls inbound traffic from the internet to an internal service. An open proxy is a third-party, uncontrolled proxy, and it’s a security concern because it’s often used to circumvent existing security controls.
+- In active/active, all servers handle traffic, so the others keep going if one fails. In active/passive, some servers are on standby, and a passive one takes over when an active one fails.
+
+## Port Security
+
+**## What it is**
+
+- Port security refers to the individual interfaces on a switch or connections to a wireless access point.
+- Commonly used on wireless networks, but not limited to them. It can be added to switches.
+
+**## EAP and 802.1X**
+
+- **EAP (Extensible Authentication Protocol)** is an authentication protocol. Its most common integration is with **802.1X**.
+- 802.1X is also called **Port-Based Network Access Control (NAC)**. You can’t gain access to the network unless you authenticate.
+- Commonly used with RADIUS, LDAP, TACACS+, and Kerberos.
+
+**## Three components**
+
+- **Supplicant:** the client.
+- **Authenticator:** the device that provides access.
+- **Authentication server:** validates the client’s credentials.
+
+**## What I mixed up**
+
+- 802.1X has three components: the supplicant (the client), the authenticator (the device that provides access), and the authentication server (validates the client’s credentials). A device that hasn’t authenticated can’t gain access to the network.
