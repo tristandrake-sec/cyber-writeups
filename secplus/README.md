@@ -1750,3 +1750,95 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 **## What I mixed up**
 
 - 802.1X has three components: the supplicant (the client), the authenticator (the device that provides access), and the authentication server (validates the client’s credentials). A device that hasn’t authenticated can’t gain access to the network.
+
+## Firewall Types
+
+**## Firewalls in general**
+
+- A firewall is standard issue. It controls the flow of network traffic, and everything passes through it.
+- Also provides corporate control of outbound and inbound data, control of inappropriate content, and protection against “evil” (anti-malware).
+
+**## Network-based firewalls**
+
+- Filter traffic by port number or application (OSI layer 4 or 7).
+- Can encrypt traffic. Most can act as layer 3 devices, and they often sit at the ingress/egress of the network.
+
+**## UTM (Unified Threat Management) / Web security gateway**
+
+- Can do URL filtering, content inspection, malware inspection, spam filtering, CSU/DSU, router, switch, firewall, IDS/IPS, bandwidth shaper, and VPN endpoint.
+- Many only function at layer 4 and look at port numbers.
+
+**## NGFW (next-generation firewall)**
+
+- Works at layer 7 and looks at applications. Requires advanced decodes.
+- A network-based firewall. It has a list of known vulnerabilities, so it also works as an intrusion prevention system, and it does content filtering.
+
+**## WAF (web application firewall)**
+
+- Not like a “normal” firewall. It allows or denies traffic based on expected input.
+- Can identify SQL injections.
+
+**## What I mixed up**
+
+- A layer 4 firewall filters on port numbers, and an NGFW filters at layer 7 by application. A WAF isn’t like a normal firewall. It allows or denies traffic based on expected input, which lets it catch attacks like SQL injection in web traffic.
+
+## Secure Communication
+
+**## VPN (Virtual Private Network)**
+
+- Encrypts all private data traversing a public network.
+- The **VPN concentrator** is the endpoint. It’s often integrated into a firewall and often used with client software.
+- An **encrypted tunnel** keeps data private across the public network. It encrypts your data by adding headers and trailers. When the packet is received, it’s decrypted on the other side.
+
+**## SSL/TLS VPN**
+
+- Uses common protocols and runs over TCP port 443.
+- Commonly used for remote access. It authenticates users and can be run from a browser.
+- Provides on-demand access from a remote device.
+
+**## Site-to-site IPsec VPN**
+
+- Always on, or mostly always on. The firewalls often act as the VPN concentrators.
+
+**## SD-WAN**
+
+- Software-Defined Wide Area Network.
+- Allows cloud-based applications to communicate directly with the cloud.
+
+**## SASE (Secure Access Service Edge)**
+
+- Updates secure access for cloud services, letting people connect securely from different locations.
+- The security technologies are in the cloud, and SASE clients are on all devices.
+
+**## What I mixed up**
+
+- An SSL/TLS VPN is used for remote access, like a worker on a laptop, and runs over TCP port 443. A site-to-site IPsec VPN is always on and connects two offices.
+- SD-WAN lets cloud-based applications communicate directly with the cloud. SASE updates secure access for cloud services so people can connect securely from different locations, with the security technologies in the cloud and SASE clients on all devices.
+
+## Data Types and Classifications
+'
+**## Data types**
+
+- **Regulated data:** managed by a third party.
+- **Trade secrets:** an organization’s secret formulas, often unique to that organization.
+- **Intellectual property:** may be publicly visible and carry copyright and trademark restrictions.
+- **Legal info:** can be court documents. Personally identifiable info may be stored in a separate area.
+- **Financial info:** should be private.
+- **Human-readable data:** clear and obvious. **Non-human-readable data:** something like a barcode, which can’t be easily understood. Sometimes there’s a mix of both.
+- **Proprietary data:** data that is the property of the organization.
+- **PII (personally identifiable information):** something that can tie back to a person, like your name.
+- **PHI (protected health information):** health info associated with an individual.
+
+**## Data classifications**
+
+- Not all data has the same level of categorization, and different levels require different security and handling.
+- **Sensitive:** data like PII or PHI.
+- **Confidential:** very sensitive, and requires approval to view.
+- **Public / unclassified:** data anyone can see.
+- **Private / classified:** restricted access, and may require an NDA.
+- **Critical:** should always be available.
+
+**## What I mixed up**
+
+- PII is info that can tie back to a person, like a name. PHI is health info associated with an individual.
+- Confidential data is very sensitive and requires approval to view. Private/classified data has restricted access and may require an NDA. Critical data should always be available.'
