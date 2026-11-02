@@ -1841,4 +1841,118 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 **## What I mixed up**
 
 - PII is info that can tie back to a person, like a name. PHI is health info associated with an individual.
-- Confidential data is very sensitive and requires approval to view. Private/classified data has restricted access and may require an NDA. Critical data should always be available.'
+- Confidential data is very sensitive and requires approval to view. Private/classified data has restricted access and may require an NDA. Critical data should always be available.
+
+## States of Data
+
+**## Data at rest**
+
+- Data on a storage device, like a hard drive.
+- Encryption is necessary: whole disk encryption, database encryption, or file-level encryption.
+- You can also apply permissions, like ACLs.
+
+**## Data in transit**
+
+- Data moving across the network.
+- There isn’t much protection as it travels. Ways to protect it: a firewall or IPS (allow good traffic through, deny unusual traffic), and transport encryption through **TLS** or **IPsec**.
+
+**## Data in use**
+
+- Data actively being processed in memory, like system RAM.
+- It’s almost always decrypted so it can be seen, which is why attackers like to attack data in use.
+
+**## Data sovereignty**
+
+- Data stored inside a country is subject to all of that country’s laws. These laws may prohibit where data can be stored.
+
+**## Geolocation**
+
+- It’s important to know where data is stored and where it’s being accessed from.
+- Ways to identify location: GPS, 802.11, etc. Knowing the location can be used to manage data access or the level of control.
+
+**## What I mixed up**
+
+- Data in use is the hardest state to protect because it’s almost always decrypted in memory so it can be seen, which is why attackers like to attack it. Data at rest is protected with encryption, and data in transit with a firewall/IPS or transport encryption (TLS or IPsec).
+
+## Protecting Data
+
+**## Geographic restrictions**
+
+- Restrict by subnet or IP address.
+- Accuracy of location: **GPS** is the most accurate, **802.11** is a little less accurate, and **IP address** is not very accurate.
+- **Geofencing** allows or restricts access when the user is in a particular location.
+
+**## Why it’s hard**
+
+- Protecting data is a primary job task. It’s difficult because data is everywhere: on a storage drive, on the network, or in a CPU.
+
+**## Encryption**
+
+- Takes plaintext and turns it into ciphertext. You can also decrypt it, so it’s a two-way street.
+- Encrypted data looking very different from unencrypted data is called **confusion**.
+
+**## Hashing**
+
+- Represents data as a short string of text. A one-way trip that provides integrity.
+
+**## Obfuscation**
+
+- Makes something understandable very difficult to understand. It can turn perfectly readable code into nonsense. Attackers can also use it to hide malicious code.
+- **Masking:** a type of obfuscation. Protects PII and other sensitive data. It doesn’t automatically mask the data in storage, only in view.
+- **Tokenization:** replaces sensitive data with a non-sensitive placeholder, a token. It isn’t encryption or hashing.
+
+**## Segmentation**
+
+- Many organizations use a single data source, one large database, so one breach puts all the data at risk.
+- Segmentation splits the data into different areas, so you can set security based on the value of the data.
+
+**## Permission restrictions**
+
+- Control access to an account, using the authentication process.
+
+**## What I mixed up**
+
+- Masking leaves the original data stored unchanged and only masks what’s shown in the view. Tokenization replaces the sensitive data with a placeholder that isn’t mathematically related to it.
+- Keeping everything in one large database means one breach exposes all the data.
+
+## Resiliency
+
+**## High availability**
+
+- Essential. Redundancy doesn’t always mean always available.
+- **HA** is always on, always available. It includes many different components but comes with additional costs.
+
+**## Server clustering**
+
+- Two or more servers, but users only see one device.
+- Allows an easy increase in capacity and availability. The servers usually run the same OS.
+
+**## Load balancing**
+
+- One central load balancer distributes the load between individual servers. The servers can run different operating systems.
+- The load balancer can add or remove devices based on need.
+
+**## Site resiliency**
+
+- Physical. When a disaster occurs, the organization can move its entire data center to another location, keep operating normally during the disaster, and move back to the original data center afterward.
+- **Hot site:** an exact replica. Constantly stocked with hardware, with applications and software duplicated.
+- **Cold site:** no hardware, just an empty building. You have to provide everything: people, hardware.
+- **Warm site:** a middle ground. May contain some hardware, but you still have to move things over for everything to operate.
+- These sites are usually far away so that something like a hurricane or flood doesn’t affect the recovery site. This can be a logistical issue.
+
+**## Platform diversity**
+
+- Many vulnerabilities are linked to an OS like Windows or Linux. Using different operating systems means one OS risk doesn’t affect everything.
+
+**## Multi-cloud**
+
+- Plan for cloud outages. Same idea as OS risk: spread across cloud providers to maintain uptime and availability.
+
+**## COOP (continuity of operations planning)**
+
+- A failback plan that provides an alternative. It needs to be documented and tested before it’s implemented.
+
+**## What I mixed up**
+
+- A hot site recovers fastest and costs the most. A cold site has no hardware, so you have to provide everything: people and hardware.
+- Server clustering is two or more servers that appear to users as one device, usually running the same OS. A load balancer is one central device that distributes the load between individual servers, which can run different operating systems.
