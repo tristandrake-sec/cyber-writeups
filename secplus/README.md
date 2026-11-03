@@ -1956,3 +1956,99 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 
 - A hot site recovers fastest and costs the most. A cold site has no hardware, so you have to provide everything: people and hardware.
 - Server clustering is two or more servers that appear to users as one device, usually running the same OS. A load balancer is one central device that distributes the load between individual servers, which can run different operating systems.
+
+## Capacity Planning
+
+**## What it is**
+
+- Capacity planning means matching supply to demand.
+- **Too much demand** causes application slowdowns and outages. **Too much supply** means you spend too much money.
+- It requires a balanced approach: the right amount of people, appropriate technology, and the best infrastructure.
+
+**## People**
+
+- Important, especially for call centers. Hiring is expensive.
+
+**## Technology**
+
+- It’s a necessity to pick technology that has scalability.
+- **Web servers:** distribute the load with a load balancer.
+- **Database services:** split the databases to increase capacity.
+
+**## Infrastructure**
+
+- The underlying framework: CPU, network, storage, physical devices, and cloud-based devices.
+
+**## What I mixed up**
+
+- Too much demand causes slowdowns and outages, and too much supply wastes money. For a web server, use a load balancer. For a database, split the databases to increase capacity.
+
+## Recovery Testing
+
+**## What it is**
+
+- It’s essential to test yourself before an actual event. Use well-defined rules of engagement and evaluate the response.
+
+**## Tabletop exercises**
+
+- A full-scale disaster drill can be costly and time-consuming. You don’t have to physically go through it.
+
+**## Failover test**
+
+- Checks whether redundant configurations can switch over if there’s a failure.
+- Requires a redundant infrastructure, which may include firewalls, switches, and routers.
+
+**## Simulations**
+
+- Testing with a simulated event, like a phishing email sent to your employees to see if they click the links.
+- This tests internal security, including whether the email even makes it to the employees.
+
+**## Parallel processing**
+
+- A process split across multiple (parallel) CPUs. Provides improved performance and recovery.
+
+**## What I mixed up**
+
+- A failover test checks whether redundant configurations actually switch over after a failure. A simulation tests with a simulated event, like a phishing email sent to employees to see whether it gets through and whether they click. (Tabletop: confirm in the video and add your own wording.)
+
+## Backups
+
+**## Onsite vs offsite**
+
+- **Onsite backup:** the data and the backup media are in the same place. The data is immediately available, and it’s less expensive.
+- **Offsite backup:** the data is transferred to a separate location, over the internet or a WAN link. It’s available after a disaster.
+- Most companies use both.
+
+**## Frequency**
+
+- How often do you back up? It may differ for different devices, and there may be multiple backup sets (daily, weekly, monthly). This requires significant planning.
+
+**## Encryption**
+
+- Vital. A history of data sits on the backup media, which makes it an easy target for an attacker, especially in transit.
+- Especially important for cloud backups and storage.
+
+**## Snapshots**
+
+- Very popular with virtual machines and cloud-based backups. They give you an instant backup with one click.
+- Since it’s such an easy process, it’s a good idea to take a snapshot every 24 hours.
+
+**## Recovery testing**
+
+- Essential: test your backups to make sure they work.
+- Once data is restored you’re only halfway. Make sure the applications and data can actually be used.
+
+**## Replication**
+
+- Takes a single source of data and copies it to multiple locations, almost in real time.
+- Data is always available and recoverable, and it can be stored locally for all users.
+
+**## Journaling**
+
+- Corrupted data can make recovery complicated and time-consuming. That’s why journaling is essential.
+- The data is first written to a journal. Once it’s written, it can be copied into the final version.
+
+**## What I mixed up**
+
+- Onsite backups are cheaper and available immediately. Offsite backups keep data available after a disaster at the main site. Encryption matters more for cloud backups because the data travels over the internet and sits on someone else’s infrastructure, and a backup holds a history of the data, which makes it an easy target.
+- Replication keeps data available by copying it to multiple locations almost in real time. A snapshot is an instant, one-click backup. Journaling writes data to a journal first and copies it into the final version afterward, so a failure partway through doesn’t corrupt the final copy.
