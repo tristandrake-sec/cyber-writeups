@@ -2052,3 +2052,47 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 
 - Onsite backups are cheaper and available immediately. Offsite backups keep data available after a disaster at the main site. Encryption matters more for cloud backups because the data travels over the internet and sits on someone else’s infrastructure, and a backup holds a history of the data, which makes it an easy target.
 - Replication keeps data available by copying it to multiple locations almost in real time. A snapshot is an instant, one-click backup. Journaling writes data to a journal first and copies it into the final version afterward, so a failure partway through doesn’t corrupt the final copy.
+
+## Power Resiliency
+
+**## What it is**
+
+- Power is the foundation of technology, so it’s important to engineer and plan properly for outages.
+- There are ways to mitigate power outages both short term and long term.
+
+**## UPS (uninterruptible power supply)**
+
+- A short-term power outage solution.
+- **Types:** offline/standby, line-interactive, and online/double-conversion.
+- **Features:** auto shutdown, battery capacity, outlets, and phone-line suppression.
+
+**## Generators**
+
+- A long-term power outage solution. Capable of powering an entire building.
+- Most organizations use both a UPS and a generator, since a generator can take a little while to power up.
+
+**## What I mixed up**
+
+- A UPS is the short-term solution and a generator is the long-term one. Most organizations use both, because a UPS gives immediate power during an outage while a generator can take a little while to start.
+
+## Secure Baselines
+
+**## What it is**
+
+- The security of an application environment should be well defined. This includes a baseline, firewall settings, patch levels, and OS file versions, and it may require constant updates.
+- Security baselines are often available from the manufacturer and can be modified for your specific needs.
+- Many OS settings have extensive options and configs.
+
+**## Deploying baselines**
+
+- Usually managed through a centrally administered console, but some may need multiple deployment mechanisms, such as **AD group policy** or **MDM**. Automation is the key.
+
+**## Maintaining baselines**
+
+- Once deployed, you need to maintain these best practices. Many baselines require constant updates because of changes: new vulnerabilities, updated applications, or a new OS being installed.
+- It’s necessary to test and measure to avoid conflicts.
+
+**## What I mixed up**
+
+- Baselines need constant updates because of new vulnerabilities, updated applications, and new OS installations. Testing and measuring before rollout avoids conflicts.
+- Automation is the key to deploying baselines: it lets them roll out faster and at the same time. They’re usually deployed from a centrally administered console, using mechanisms like AD group policy or MDM.
