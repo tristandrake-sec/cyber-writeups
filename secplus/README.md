@@ -2096,3 +2096,102 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 
 - Baselines need constant updates because of new vulnerabilities, updated applications, and new OS installations. Testing and measuring before rollout avoids conflicts.
 - Automation is the key to deploying baselines: it lets them roll out faster and at the same time. They’re usually deployed from a centrally administered console, using mechanisms like AD group policy or MDM.
+
+## Hardening by Device Type
+
+**## What it is**
+
+- No system is secure with its default configurations.
+- Hardening guides are specific to the software or platform.
+
+**## Mobile devices**
+
+- Must be hardened. Updates are critical because of bug fixes and patches.
+- Segmentation can protect data: company data and user data are separated.
+- Controlled with an **MDM (mobile device manager)**.
+
+**## Workstations**
+
+- Hardening user desktops and laptops is essential.
+- Constant monitoring and updates are essential. Automated monthly updates are common.
+- Removing unnecessary software is essential.
+
+**## Network infrastructure (switches / routers)**
+
+- Change and configure the default configs.
+- Check with the manufacturer for updates and patches.
+
+**## Cloud management workstation**
+
+- Secure it with least privilege and a configured **EDR**.
+- Always have a backup in case of an outage.
+
+**## Servers**
+
+- Always update systems, including service packs and security patches.
+- Use proper passwords for user accounts, limit network access, harden security, and run anti-malware/antivirus.
+
+**## SCADA / ICS**
+
+- **SCADA (Supervisory Control and Data Acquisition)** manages large-scale equipment and requires extensive segmentation.
+
+**## Embedded systems**
+
+- A challenge to harden because the hardware and software are designed for a specific function.
+- Can be difficult to upgrade or patch. If there is a patch, always try to update.
+- Also a good idea to put them on their own network behind a firewall.
+
+**## RTOS (real-time operating system)**
+
+- Should be isolated and run with the minimum amount of services.
+- Use a secure configuration through a host-based firewall.
+
+**## IoT**
+
+- Weak defaults, so deploy patches as soon as possible.
+- Segment IoT devices on their own network.
+
+**## What I mixed up**
+
+- Embedded systems are difficult to patch, but I should still update when a patch exists. Embedded systems, RTOS, and IoT devices are all hardened by isolating them on their own network with a firewall. RTOS also runs the minimum amount of services, and IoT needs patches deployed as soon as possible.
+
+## Securing Wireless and Mobile
+
+**## Site surveys**
+
+- Determine the existing wireless landscape.
+- One of the first steps is identifying existing access points. If some are outside your control, you may have to work around their existing frequencies.
+- Plan for ongoing site surveys.
+- **Heat maps** are a good way to visualize a site survey and show signal strengths.
+- Wireless survey tools give a summary of signal coverage and can identify potential interference. Operating systems have built-in tools, and there are a number of third-party tools. You can also use a **spectrum analyzer**.
+
+**## MDM (mobile device manager)**
+
+- Useful for managing company-owned or user-owned mobile devices.
+- Centralized management of mobile devices. Can set policies on apps, data, the camera, etc., and can manage access control.
+
+**## Deployment models**
+
+- **BYOD (bring your own device):** difficult to secure because the employee owns the device.
+- **COPE (corporate-owned, personally enabled):** the company buys the device and assigns it to the employee. The organization keeps full control, and the info is protected using corporate policies.
+
+**## Mobile / cellular concerns**
+
+- Mobile devices create a challenge, and cellular networks are separated into “cells.”
+- Security concerns include location tracking and traffic monitoring.
+
+**## Wi-Fi**
+
+- Wi-Fi devices have similar concerns. Make sure your data is encrypted.
+- Attackers can be in the general area and perform an on-path attack or a DoS.
+
+**## Bluetooth**
+
+- **PAN (personal area network):** connects our devices, including mobile devices.
+- Make sure you don’t connect to unknown Bluetooth devices.
+
+**## What I mixed up**
+
+- With BYOD the employee owns the device. With COPE the company buys the device and assigns it to the employee, so it keeps full control and protects the info with corporate policies.
+- A heat map shows signal strengths across a space. Site surveys need to be ongoing because the wireless landscape changes, including interference and access points outside my control.
+- An attacker in the general area of a Wi-Fi network can perform an on-path attack or a DoS. With Bluetooth, don’t connect to unknown devices.
