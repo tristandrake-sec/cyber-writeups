@@ -2195,3 +2195,102 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 - With BYOD the employee owns the device. With COPE the company buys the device and assigns it to the employee, so it keeps full control and protects the info with corporate policies.
 - A heat map shows signal strengths across a space. Site surveys need to be ongoing because the wireless landscape changes, including interference and access points outside my control.
 - An attacker in the general area of a Wi-Fi network can perform an on-path attack or a DoS. With Bluetooth, don’t connect to unknown devices.
+
+## Wireless Security Settings
+
+**## What it is**
+
+- Authenticating users before granting access to the wireless network is essential.
+- All communication also needs to be confidential (encrypted) and verified for integrity with a **MIC (message integrity check)**.
+
+**## WPA2**
+
+- Has a brute force security concern.
+- **PSK** means pre-shared key. Once you have the PSK, you have everyone’s wireless key.
+
+**## WPA3**
+
+- What we use now.
+- **GCMP** was used to stop brute force attacks through better encryption, with a MIC using GCMP (Galois Message Authentication Code).
+- There’s no four-way handshake or hash, which means no more brute force attacks.
+- **SAE (Simultaneous Authentication of Equals):** uses a Diffie-Hellman-derived key exchange with an authentication component. Everyone uses a different session key.
+
+**## Network authentication**
+
+- Provided in two ways: a pre-shared key (PSK), or centralized authentication using 802.1X.
+- You provide security by configuring the authentication on the WAP or wireless router.
+- **WPA3-Personal** is for home use. **WPA3-Enterprise** is for office use.
+- The difference: Personal uses a PSK, and Enterprise uses 802.1X.
+
+**## AAA, RADIUS, 802.1X, EAP**
+
+- **AAA framework:** authentication (username/password), authorization (what resources you have access to), and accounting (resources used, like login time).
+- **RADIUS (Remote Authentication Dial-In User Service):** a common AAA protocol. Provides centralized authentication for users and is available on almost any OS.
+- **802.1X** works on wireless and wired networks, and is used in conjunction with an access database.
+- **EAP (Extensible Authentication Protocol):** flexible and common. It integrates with 802.1X.
+
+**## What I mixed up**
+
+- A PSK’s weakness is that once an attacker has the shared key, they have everyone’s wireless key. SAE changes that by giving everyone a different session key.
+- WPA3-Personal is for home and uses a PSK. WPA3-Enterprise is for the office and uses 802.1X.
+- RADIUS is the AAA protocol, and 802.1X controls access to the network port.
+
+## Application Security
+
+**## Input validation**
+
+- Checks for the expected input across many forms. It should check for and correct all input (**normalization**).
+
+**## Cookies**
+
+- Info stored inside your browser, used for tracking, personalization, and session management.
+- Many browsers use **secure cookies**, which are only sent over secure protocols like HTTPS.
+- Sensitive info shouldn’t be saved in cookies.
+
+**## SAST (static application security testing)**
+
+- Tests for security vulnerabilities like buffer overflows or database injections.
+- Not everything can be found by the analyzer, and its output may not be perfect.
+
+**## Code signing**
+
+- Lets you check that the code was sent by the proper developer, who provides a digital signature.
+
+**## Sandboxing**
+
+- The application can’t access unrelated resources. Commonly used in deployment.
+- Used in many ways: VMs, mobile phones, browser iframes, and UAC (User Account Control).
+
+**## Monitoring**
+
+- Essential. It provides real-time info, shows blocked attacks, provides extensive logs, and detects anomalies.
+
+**## What I mixed up**
+
+- SAST tests for security vulnerabilities like buffer overflows and database injections, but it can’t be fully relied on because it won’t find everything and its output may not be exact.
+- Code signing proves the code came from the proper developer, who provides a digital signature. Sandboxing keeps an application from accessing unrelated resources.
+
+## Asset Management
+
+**## Acquisition / procurement**
+
+- The purchasing process: a request from the user, then negotiation with a supplier, the purchase, an invoice, and payment.
+
+**## Tracking**
+
+- A central asset tracking system holds the ownership and classification of hardware or software.
+- Asset tracking involves an inventory of every asset, including every hardware component. It helps associate a support ticket with every device, and allows for **enumeration** (listing all the parts of an asset).
+
+**## Disposal and reuse**
+
+- When reusing a device, you may need to remove all company data. This is done through **sanitization**. The sanitization method depends on the use case: completely disposing of the device, or reusing it.
+- To guarantee no one ever sees the data, use **physical destruction**. For large-scale applications this is often done by a third-party vendor, who destroys the assets and confirms with a **certificate of destruction**.
+
+**## Data retention**
+
+- Involves copies, versions of copies, the lifecycle of data, and purging old data.
+- Also involves regulatory compliance and operational needs, and can differ by type and application.
+
+**## What I mixed up**
+
+- Sanitization removes the company data so a device can be reused. Physical destruction is for when no one should ever be able to see the data. A certificate of destruction is the third-party vendor’s confirmation that the assets were destroyed.
