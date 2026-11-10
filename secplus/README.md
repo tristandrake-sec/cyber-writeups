@@ -2294,3 +2294,88 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 **## What I mixed up**
 
 - Sanitization removes the company data so a device can be reused. Physical destruction is for when no one should ever be able to see the data. A certificate of destruction is the third-party vendor’s confirmation that the assets were destroyed.
+
+## Vulnerability Scanning
+
+**## What it is**
+
+- A vulnerability scan determines whether a machine is susceptible to an attack. It’s usually minimally invasive compared to a penetration test. An example is a port scan.
+- Good at identifying systems. Scans can come from outside and inside, and they try to gather as much info as possible.
+
+**## SAST (static application security testing)**
+
+- Helps identify vulnerabilities written in the code, like buffer overflows and database injections.
+- Not everything can be identified, such as authentication security or insecure cryptography. You still need to verify everything.
+
+**## Dynamic analysis / fuzzing**
+
+- Designed to put random input into an application.
+- It looks for the application to respond in an out-of-the-ordinary way, like an application crash or a server error.
+- Fuzzing can be very time-consuming and resource-heavy.
+
+**## Package monitoring**
+
+- Some applications are provided as a package, like an executable. That’s where package monitoring comes from.
+- Confirm the package is legitimate and safe before deployment.
+
+**## What I mixed up**
+
+- SAST is static. It finds vulnerabilities written in the code, like buffer overflows and database injections, without running the application. It misses things like authentication security and insecure cryptography. Fuzzing is dynamic analysis. It feeds random input to a running application and looks for crashes or server errors, and it’s time-consuming and resource-heavy.
+
+## Threat Intelligence
+
+**## What it is**
+
+- Research the threat and the threat actors too. Data is everywhere, and you need to make decisions based on this threat intelligence.
+
+**## OSINT (open-source intelligence)**
+
+- Publicly available to everyone. Can come from the internet, government data, or commercial data.
+
+**## Proprietary / third-party intelligence**
+
+- Someone else has already compiled the threat info. They provide threat intelligence services like threat analytics or correlation across different data sources, plus constant threat monitoring.
+
+**## Sharing**
+
+- Organizations can work together to share public and classified data, including critical security details. An example is the **CTA (Cyber Threat Alliance)**.
+
+**## Dark web**
+
+- An overlay network that uses the internet. You can find a number of hacking groups and services, and forums for their activity.
+
+**## What I mixed up**
+
+- OSINT is publicly available to everyone (internet, government, or commercial data). Proprietary/third-party intelligence is compiled by someone else, with analytics, correlation, and constant monitoring. The CTA is a group of organizations that share critical security details.
+
+## Penetration Testing
+
+**## What it is**
+
+- A **pentest (penetration test)** simulates an attack on our system.
+- It’s similar to vulnerability scanning, but you actually try to exploit the vulnerabilities. It’s often a compliance mandate.
+- You’ll only be sure you’re vulnerable if you can bypass security.
+
+**## Rules of engagement**
+
+- Before starting, you must have rules of engagement. They list the scope and purpose of the test, the type of testing, the schedule, and specific rules.
+
+**## Be careful**
+
+- Penetration testing needs care so you don’t cause a DoS or data loss. You may need to try different vulnerability types.
+
+**## The process**
+
+- Initial exploitation → lateral movement → persistence → the pivot (moving on to other systems).
+
+**## Disclosure**
+
+- It takes time to fix a vulnerability, so it’s essential to have a **responsible disclosure** program.
+- **Bug bounty programs** reward people who find bugs.
+
+**## What I mixed up**
+
+- A pentest is more invasive than a vulnerability scan, and it tells me whether I can actually be broken into.
+- Rules of engagement list the scope and purpose, the type of testing, the schedule, and specific rules.
+- Pivoting means using a compromised system to reach other systems. Lateral movement is not user-to-user, which is horizontal privilege escalation.
+- Responsible disclosure gives the vendor time to fix a vulnerability before details go public. A bug bounty program rewards people who find bugs. They aren’t hired.
