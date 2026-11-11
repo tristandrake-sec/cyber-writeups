@@ -2379,3 +2379,73 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 - Rules of engagement list the scope and purpose, the type of testing, the schedule, and specific rules.
 - Pivoting means using a compromised system to reach other systems. Lateral movement is not user-to-user, which is horizontal privilege escalation.
 - Responsible disclosure gives the vendor time to fix a vulnerability before details go public. A bug bounty program rewards people who find bugs. They aren’t hired.
+
+## Analyzing Vulnerabilities
+
+**## False results**
+
+- A challenge with vulnerabilities is dealing with **false positives**: a vulnerability that’s identified but doesn’t really exist. This is different from a low-severity vulnerability, which does exist.
+- **False negatives** occur when a vulnerability exists but isn’t detected.
+
+**## Planning a scan**
+
+- When planning a vulnerability scan, update to the latest signatures and work with the manufacturer.
+- Scans can check various things: application scans, web application scans, and network scans.
+
+**## Rating vulnerabilities**
+
+- Not every vulnerability is the same. They’re rated high, medium, and low.
+- **CVSS (Common Vulnerability Scoring System):** rates a vulnerability on a scale. It’s an industry collaboration.
+- **CVE (Common Vulnerabilities and Exposures):** another way to spot vulnerabilities.
+
+**## Determining how risky it is**
+
+- **Exposure factor:** rated as a percentage.
+- **Environmental variables:** for example, whether it’s in the cloud or on a single system.
+- **Industry / organizational impact** can also change the rating.
+
+**## Managing security patches**
+
+- You need to set a priority.
+- **Risk tolerance:** how much risk an organization is willing to take.
+- The timing of security patches is also essential, and testing takes time.
+
+**## What I mixed up**
+
+- A false positive is a vulnerability the scanner flags that doesn’t exist, and a low-severity vulnerability is real but ranks low. A false negative is more dangerous, because a real vulnerability exists and the scanner misses it.
+- CVSS scores vulnerabilities, and CVE is a list of commonly known ones.
+- Patch priority depends on exposure factor, environmental variables, and industry or organizational impact. (Add risk tolerance in your own words.)
+
+## Vulnerability Remediation
+
+**## Patching**
+
+- The most common mitigation technique. Usually scheduled, but a zero-day can be an unscheduled patch.
+
+**## Cybersecurity insurance**
+
+- Helps recover lost revenue, data recovery costs, etc., but doesn’t cover everything.
+
+**## Segmentation**
+
+- Limits the scope by separating devices onto their own networks or VLANs, so a breach has limited scope. An **NGFW** is a great way to implement this.
+- **Physical segmentation:** completely separate devices.
+- **Logical segmentation (VLANs):** separated logically, not physically. VLANs can’t communicate without a layer 3 device or router.
+
+**## When you can’t patch**
+
+- Compensate by disabling the service, revoking access to the application, limiting external access, or modifying internal security controls and software firewalls.
+
+**## Validating the patch**
+
+- Perform a vulnerability scan, an audit, and verify.
+
+**## Reporting**
+
+- Large organizations need a reporting system for ongoing checks, including ongoing and newly discovered vulnerabilities.
+
+**## What I mixed up**
+
+- If a system can’t be patched, I can compensate by revoking access to the application or disabling the service. I validate a patch afterward with a vulnerability scan and an audit.
+- Segmentation limits a breach by putting devices on their own networks. Physical segmentation uses completely separate devices. Logical segmentation (VLANs) separates them without separate hardware, and VLANs can’t communicate without a layer 3 device or router.
+
