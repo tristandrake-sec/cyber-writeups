@@ -2449,3 +2449,85 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 - If a system can’t be patched, I can compensate by revoking access to the application or disabling the service. I validate a patch afterward with a vulnerability scan and an audit.
 - Segmentation limits a breach by putting devices on their own networks. Physical segmentation uses completely separate devices. Logical segmentation (VLANs) separates them without separate hardware, and VLANs can’t communicate without a layer 3 device or router.
 
+## Security Monitoring
+
+**## What it is**
+
+- Attackers are never asleep and are always trying to gain access, so we monitor all entry points and monitor in real time to react to security events.
+- It’s also a good idea to put this info on status dashboards to see the status of all systems at a glance.
+
+**## What to monitor**
+
+- **Systems:** the obvious spots are authentication and services.
+- **Applications:** availability, data transfers, and security notifications.
+- **Infrastructure:** remote access systems, and firewall and IPS reports.
+
+**## Log aggregation**
+
+- Done with a **SIEM** or **SEM**, which lets you consolidate many different logs into a central database.
+- Allows centralized reporting and correlation between diverse systems.
+
+**## Scanning and reporting**
+
+- Scanning is very important because the threat landscape is constantly changing. Many companies have active checks of systems and devices that gather the raw details.
+- **Actionable reports:** analyzing the collected data. Reporting also displays status info and can help determine the next best steps.
+- **Ad hoc reporting:** a report built for a specific situation (see my note below).
+- On average, it takes about 9 months for a company to identify a breach.
+- Access to data is very critical, and there may be a mandate to collect data over time.
+
+**## Alerting**
+
+- Real-time notification of security events is a great way to identify potential breaches.
+- Notification methods like email or SMS are a good way to alert people in real time.
+- Once an alarm is generated, you need to react. A great way is to **quarantine** the system so the attacker can’t jump to other devices.
+- **Alert tuning** is a balancing act: avoid both false positives and false negatives.
+
+**## What I mixed up**
+
+- The three areas to monitor are systems, applications, and infrastructure. A SIEM consolidates many different logs into a central database, which allows centralized reporting and correlation between diverse systems.
+- Quarantining a system after an alarm stops the attacker from jumping to other devices. Alert tuning is a balancing act: a threshold that’s too tight causes false positives, and one that’s too loose causes false negatives.
+
+## Security Tools
+
+**## SCAP (Security Content Automation Protocol)**
+
+- Different security tools, like NGFWs or IPS, can find the same vulnerabilities but describe them in different terms. **NIST (National Institute of Standards and Technology)** created SCAP so tools can identify and act on the same criteria.
+- SCAP content can be shared between tools, which is especially useful in large environments.
+- Communicating in the same language enables **automation**: ongoing monitoring, notification and alerting, and remediation of noncompliant systems.
+
+**## Benchmarks**
+
+- Help apply security best practices to everything. Popular benchmarks can be found through the **CIS (Center for Internet Security)**.
+
+**## Checking compliance**
+
+- **Agent:** always on, and can provide more detail, but requires an install and updates.
+- **Agentless:** can be done without a formal install, but requires ongoing maintenance and doesn’t run 24/7.
+
+**## Antivirus / anti-malware**
+
+- Identifies malware like viruses and trojan horses. Malware also includes spyware, ransomware, and fileless malware.
+
+**## DLP (data loss prevention)**
+
+- Looks for and blocks any data you don’t want on the network. It stops the data before an attacker gets it.
+
+**## SNMP (Simple Network Management Protocol)**
+
+- Has a database called a **MIB (Management Information Base)**, which includes a database of **OIDs (object identifiers)**.
+- Requests statistics from a device and polls devices at fixed intervals.
+- Most SNMP operations expect a poll. **SNMP traps** can be configured on the monitored device, with a threshold that sets off alerts.
+
+**## NetFlow**
+
+- Gathers traffic statistics from all traffic flows. Commonly works with a **probe** and a **collector**, and usually has a separate reporting app.
+
+**## Vulnerability scanners**
+
+- Usually minimally invasive. They do port scans, identify systems, test from inside and outside, and gather as much info as possible.
+
+**## What I mixed up**
+
+- SNMP collects statistics from devices by polling at fixed intervals, and a trap set on the device alerts when a threshold is crossed. NetFlow collects traffic statistics from all traffic flows.
+- An agent is always on and gives more detail, but needs an install and updates. DLP looks for and blocks data I don’t want on the network, before an attacker gets it. Antivirus identifies malware.
+
