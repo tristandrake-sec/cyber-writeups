@@ -2531,3 +2531,70 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 - SNMP collects statistics from devices by polling at fixed intervals, and a trap set on the device alerts when a threshold is crossed. NetFlow collects traffic statistics from all traffic flows.
 - An agent is always on and gives more detail, but needs an install and updates. DLP looks for and blocks data I don’t want on the network, before an attacker gets it. Antivirus identifies malware.
 
+## Firewalls
+
+**## Network-based firewall**
+
+- Sits inline and filters traffic based on a port number or application.
+- Can also encrypt traffic (VPN between sites). Most firewalls can be layer 3 devices (routers).
+
+**## NGFW (next-generation firewall)**
+
+- A common type of firewall. It analyzes the traffic flowing through it and makes decisions based on the application (layer 7).
+- Requires some advanced decodes to do this: look at the traffic (like packet captures), categorize it, and make security decisions based on those two steps.
+- You can also use port numbers to make forwarding decisions based on the protocol (TCP and UDP) and port number.
+
+**## Firewall rules**
+
+- Most firewall rules follow a logical path, top to bottom.
+- Specific rules are usually set at the top and generalized rules at the bottom.
+- Most include an **implicit deny** at the bottom of the list.
+- These lists can also be described as an **ACL (access control list)**.
+
+**## Placement**
+
+- Most companies put their firewalls at the ingress/egress section.
+- **Screened subnet:** adds another layer of security between you and the internet. It keeps public access to public resources, while private data stays inaccessible.
+
+**## IPS rules**
+
+- IPS rules are usually added to NGFW firewalls. They’re usually signature-based, with different ways to find malicious traffic, and can also work based on anomalies.
+- The rule base of an IPS is similar to a firewall’s: it determines what happens when unwanted traffic occurs. It usually has thousands of rules, so rules can be grouped because of the size.
+
+**## What I mixed up**
+
+- Firewall rules are read top to bottom, so specific rules go at the top and general rules at the bottom. Implicit deny at the bottom blocks anything not allowed by an earlier rule.
+- An NGFW makes decisions based on the application (layer 7), while a port-based firewall only sees the port number and protocol.
+- An IPS rule base is similar to a firewall’s because it determines what happens when unwanted traffic occurs, and it can have thousands of rules, which can be grouped. Signature-based detection matches known attack patterns, and anomaly-based detection looks for unusual activity.
+
+## Web Filtering
+
+**## Content filtering**
+
+- Controls traffic based on the data within the content. Also called a URL filter.
+- Gives corporate control of outbound and inbound traffic, controls inappropriate content, and can block access to known bad websites.
+- Managed by **categories** (auction, hacking, malware, etc.), but control is limited because it’s based on the URL.
+- Often built into NGFWs.
+- **Agent-based:** a URL filter inside a firewall can run as client software installed on the user’s device. Useful when users can be located anywhere. Updated lists must be kept for the agents.
+
+**## Proxies**
+
+- Sit between the users and the external network. A proxy receives the user’s request and sends it on their behalf.
+- Useful for caching info, access control, URL filtering, and content scanning.
+- **Explicit:** applications need to know how to use the proxy. **Transparent:** some proxies are invisible.
+- **Forward (internal) proxy:** commonly used to protect and control user access to the internet.
+
+**## Block rules**
+
+- Based on specific rules, or on categories of site content, and let you set different **dispositions**.
+- Some look at the **reputation** of the website and filter URLs based on perceived risk. This is usually automated, but can also be configured manually, and it allows for dispositions.
+
+**## DNS filtering**
+
+- Before you connect to a website, you get its IP address from DNS, so the filter can act at that step.
+- DNS is updated in real time through threat intelligence, and harmful sites aren’t resolved. It works for any DNS lookup.
+
+**## What I mixed up**
+
+- URL (content) filtering controls traffic by category based on the URL, is often built into an NGFW, and can run as an agent on the user’s device. DNS filtering acts at the DNS lookup, before the connection to the site is made. An agent is useful because it follows the user wherever they go, but its lists must be kept updated.
+
