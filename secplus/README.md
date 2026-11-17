@@ -2598,3 +2598,63 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 
 - URL (content) filtering controls traffic by category based on the URL, is often built into an NGFW, and can run as an agent on the user’s device. DNS filtering acts at the DNS lookup, before the connection to the site is made. An agent is useful because it follows the user wherever they go, but its lists must be kept updated.
 
+## Operating System Security
+
+**## Active Directory**
+
+- A database containing everything on the network: computers, user accounts, file shares, printers, groups, etc.
+- Manages authentication and provides centralized access control. Commonly used by the help desk.
+
+**## Group Policy**
+
+- Manages computers or users through group policies, usually run from a central console.
+- Allows a comprehensive control mechanism.
+
+**## SELinux (Security-Enhanced Linux)**
+
+- A set of security patches for the Linux kernel. Adds **mandatory access control (MAC)** along with **discretionary access control (DAC)** to Linux.
+- Open source. Limits application access.
+
+**## What I mixed up**
+
+- Active Directory is a database of everything on the network that manages authentication and provides centralized access control, and the help desk commonly uses it to fix access problems. Group Policy manages computers and users from a central console. SELinux adds mandatory access control to Linux and limits application access.
+
+## Secure Protocols
+
+**## What it is**
+
+- The best way to verify everything sent over the network is with a packet capture.
+- Your goal should always be to use a secure protocol with encryption.
+- You can sometimes tell whether a protocol is secure from its port number: HTTPS uses 443 and HTTP uses 80. But just because a port number is being used doesn’t mean the traffic is secure.
+- Don’t rely on the application. Encrypt everything over the network. A good way to do this is with a VPN.
+
+**## What I mixed up**
+
+- I can’t trust port 443 alone, because the port number doesn’t prove the application is actually encrypting. The best way to check is a packet capture, and a good way to encrypt everything is a VPN.
+
+## Email Security
+
+**## Mail gateway**
+
+- The gatekeeper. It evaluates the source of inbound email messages and blocks them at the gateway before they reach the user.
+- Can be on-site or cloud-based.
+
+**## SPF (Sender Policy Framework)**
+
+- Configures a list of all the servers authorized to send email for a domain.
+- The list of authorized mail servers is added to a DNS TXT record.
+
+**## DKIM (DomainKeys Identified Mail)**
+
+- The mail server digitally signs all outgoing mail, and the signature is validated by the receiving email servers.
+
+**## DMARC (Domain-based Message Authentication, Reporting, and Conformance)**
+
+- An extension of SPF and DKIM.
+- The domain owner decides what receiving email servers should do with emails that fail validation under SPF and DKIM.
+- It can also compile reports and send them to the email admin.
+
+**## What I mixed up**
+
+- SPF lists the servers authorized to send email for a domain. DKIM digitally signs outgoing mail so the receiving servers can validate it. DMARC is the one that lets the domain owner decide what receiving servers do with mail that fails SPF and DKIM, and it can send reports to the email admin.
+
