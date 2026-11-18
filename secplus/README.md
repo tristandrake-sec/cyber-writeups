@@ -2658,3 +2658,108 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 
 - SPF lists the servers authorized to send email for a domain. DKIM digitally signs outgoing mail so the receiving servers can validate it. DMARC is the one that lets the domain owner decide what receiving servers do with mail that fails SPF and DKIM, and it can send reports to the email admin.
 
+## Monitoring Data
+
+**## FIM (file integrity monitoring)**
+
+- Monitors operating system and application files.
+- **Windows:** done on demand with **SFC (System File Checker)**.
+- **Linux:** **Tripwire**.
+
+**## DLP (data loss prevention)**
+
+- Looks for sensitive data like credit card numbers or medical records. It works in real time and stops the data before attackers get it.
+- **Endpoint DLP:** DLP on a computer monitors data in use.
+- **On the network:** data in motion.
+- **On a server:** data at rest.
+- DLP software can be used when data is in all three forms.
+- **USB blocking:** DLP on a workstation, where it can allow or deny certain tasks.
+- **Cloud-based DLP:** sits between users and the internet. Blocks custom-defined data strings, can manage access to URLs, and blocks viruses and malware.
+
+**## DLP in email**
+
+- DLP should be included in your email system and check inbound and outbound emails.
+- **Inbound:** looks for keywords, identifies imposters, and quarantines.
+- **Outbound:** looks for fake wire transfers, W-2 info, and employee info.
+
+**## What I mixed up**
+
+- Endpoint DLP monitors data in use, DLP on the network monitors data in motion, and DLP on a server covers data at rest. USB blocking is DLP on a workstation that allows or denies certain tasks. Inbound email DLP looks for keywords, identifies imposters, and quarantines. Outbound looks for fake wire transfers, W-2 info, and employee info.
+
+## Endpoint Security
+
+**## What it is**
+
+- The endpoint is the device used by the user, including its applications and data.
+- To stop attackers, you need to monitor inbound and outbound attacks.
+- Protection needs to be multi-faceted, in depth.
+- **Control at the edge** is essential, and is usually done with a firewall.
+- **Access control** limits a device to certain data, and is done with access control lists.
+
+**## Posture assessment**
+
+- You can’t trust everyone’s computer, so you check with a posture assessment. A good time to run one is before the device connects to the network.
+- Ways to run posture assessments / health checks:
+    - **Persistent agents:** permanently installed. Updates may be required.
+    - **Dissolvable agents:** terminated after the check.
+    - **Agentless NAC:** integrated with AD, and checks are made during logon and logoff.
+- If a device doesn’t pass the posture assessment, you may quarantine it.
+
+**## EDR (endpoint detection and response)**
+
+- A different method of threat protection. Detects a threat through behavioral analysis, machine learning, and process monitoring, using a lightweight agent at the endpoint. It investigates and responds to the threat.
+
+**## XDR (extended detection and response)**
+
+- An evolution of EDR. It improves missed detections, false positives, and long investigation times.
+- Adds network-based detection and can correlate endpoint, network, and cloud data.
+- Commonly includes **user behavior analytics**, and watches users, hosts, network traffic, and data repositories.
+- All of this is put together for real-time detection of unusual activity.
+
+**## What I mixed up**
+
+- Persistent agents are permanently installed and may need updates. Dissolvable agents are terminated after the check. Agentless NAC integrates with AD and checks at logon and logoff. A device that fails the posture assessment gets quarantined.
+- XDR is an evolution of EDR. It adds network-based detection and can correlate endpoint, network, and cloud data. It improves missed detections, false positives, and long investigation times.
+
+## Identity and Access Management
+
+**## IAM (identity and access management)**
+
+- Gives the permissions to the right people at the right time. It involves access control, authentication and authorization, and identity governance.
+- It starts with the creation and deletion of a user account. It involves account details like group permissions, names, and attributes, which is a very important part of IAM.
+- A primary goal is proper permissions, and limiting access to the OS.
+
+**## Identity proofing**
+
+- Verifying that a user is really who they say they are. Also called **resolution**.
+- Validation is important, and can all be done through verification and **attestation**.
+
+**## SSO (single sign-on)**
+
+- You provide credentials one time to gain access to all the resources you need. It’s usually limited by time.
+
+**## LDAP (Lightweight Directory Access Protocol)**
+
+- Used for reading and writing directories over an IP network. Uses **X.500**.
+- X.500 uses attributes, which are value pairs.
+- The X.500 **directory information tree** is a hierarchical structure and contains objects and leaf objects.
+
+**## SAML (Security Assertion Markup Language)**
+
+- An open standard for authentication and authorization, but it doesn’t support mobile devices.
+
+**## OAuth**
+
+- An authorization framework that determines what resources are available to a user.
+- Created by Twitter, Google, and many others. It’s **not** an authentication protocol.
+
+**## Federation**
+
+- Provides network access to others without using a local authentication database. Can be done through a third-party service, which must establish a trust relationship.
+- **Interoperability** is often determined by what resources are at hand.
+
+**## What I mixed up**
+
+- OAuth is an authorization framework that determines what resources a user can access. It isn’t an authentication protocol because it doesn’t verify who the user is. SAML is an open standard for authentication and authorization, so it handles the authentication that OAuth doesn’t.
+- Federation gives others network access without using a local authentication database, usually through a third-party service. A trust relationship must exist between the parties.
+
