@@ -2763,3 +2763,77 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 - OAuth is an authorization framework that determines what resources a user can access. It isn’t an authentication protocol because it doesn’t verify who the user is. SAML is an open standard for authentication and authorization, so it handles the authentication that OAuth doesn’t.
 - Federation gives others network access without using a local authentication database, usually through a third-party service. A trust relationship must exist between the parties.
 
+## Access Controls
+
+**## What it is**
+
+- **Authorization** is the process of ensuring only authorized rights are exercised.
+- **Least privilege:** rights and permissions should be set to the bare minimum.
+
+**## Access control models**
+
+- **MAC (mandatory access control):** assigns a label to every object. The labeling of objects uses predefined rules.
+- **DAC (discretionary access control):** used in most operating systems. If you create a spreadsheet as the owner, you control who has access and can modify access at any time, which allows very flexible access control.
+- **RBAC (role-based access control):** based on the role in your organization. It starts with the admin providing access based on the user’s role. In Windows these are referred to as groups.
+- **Rule-based access control:** a generic term for following rules. Access is determined by system-enforced rules, and the rule is associated with the object.
+- **ABAC (attribute-based access control):** lets users have complex relationships to applications and data. It combines and evaluates multiple parameters.
+
+**## Time-of-day restrictions**
+
+- An admin can allow or deny access by the time of day. This can be hard to implement in a 24-hour environment.
+
+
+**## What I mixed up**
+
+- In MAC, labels on objects are set by predefined rules. In DAC, the resource owner decides access and can change it any time, so it’s the most flexible. In RBAC, the admin assigns access by role (groups in Windows).
+- Role-based access depends on the user’s role in the organization. Rule-based access is determined by system-enforced rules associated with the object. ABAC combines and evaluates multiple parameters.
+
+## Multifactor Authentication
+
+**## Something you know**
+
+- A password, a PIN (personal identification number), or a pattern.
+
+**## Something you have**
+
+- A smart card, a USB security key, hardware or software tokens, or your phone.
+
+**## Biometric authentication**
+
+- Uses a fingerprint, iris scan, or voice print.
+- Usually stores a mathematical representation of your biometric, and it’s difficult to change.
+
+**## Somewhere you are**
+
+- Provides a factor based on your location, your IP address, or mobile device location services.
+
+**## What I mixed up**
+
+- The four factors are something you know (password), something you have (phone), a biometric (fingerprint), and somewhere you are (location). A biometric is difficult to change because the system stores a mathematical representation of it, and I can’t replace my fingerprint like a password.
+
+## Password Security
+
+**## Strong passwords**
+
+- A password should be long and complex, which increases your **entropy**. Use 8+ characters.
+- **Password age:** how long it has been since a password was modified.
+- **Password expiration:** the password works for a certain amount of time, and after it expires, it no longer works.
+- To manage passwords properly, use a different password for each account.
+
+**## Password managers**
+
+- Store all your passwords in one database. Many are built into operating systems.
+
+**## Passwordless authentication**
+
+- Many breaches are due to poor password control. That’s where passwordless authentication comes in: you authenticate without a password, like with Face ID.
+
+**## Just-in-time permissions**
+
+- Grants admin access for a limited time. If the account is breached, the attacker wouldn’t have elevated rights.
+- The process starts with a request for access from a central clearinghouse, which contains **password vaulting** and creates temporary accounts.
+
+**## What I mixed up**
+
+- Password age is how long it’s been since the password was last changed. Password expiration is when the password stops working after a set time.
+- Just-in-time permissions grant admin access for a limited time. If the account is breached outside that window, the attacker wouldn’t have elevated rights.
