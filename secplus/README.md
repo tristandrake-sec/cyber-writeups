@@ -2837,3 +2837,105 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 
 - Password age is how long it’s been since the password was last changed. Password expiration is when the password stops working after a set time.
 - Just-in-time permissions grant admin access for a limited time. If the account is breached outside that window, the attacker wouldn’t have elevated rights.
+
+## Scripting and Automation
+
+**## What it is**
+
+- Scripting allows the automation of processes you would usually have to do manually.
+- It's fast, as fast as the computer, and leaves you more time for creative tasks.
+
+**## Benefits of automation**
+
+- Saves time, enforces baselines, and allows standard infrastructure configurations.
+- Allows **secure scaling**, like scaling security up or down for cloud resources.
+- Helps with **employee retention**, since it automates the boring tasks and eases the workload.
+- Great reaction time, because the computer is much faster than us.
+- A **workforce multiplier**, since the script runs 24/7.
+
+**## Use cases**
+
+- Onboarding and offboarding.
+- Guard rails for employees, and reducing errors.
+- Security groups: assigning or removing group access.
+- Ticket creation and **escalation**, where you can solve problems before any human intervention is necessary.
+- Controlling services and access.
+- Continuous integration and testing.
+- Talking directly to APIs.
+
+**## Considerations**
+
+- **Complexity:** there are many parts working together.
+- **Cost:** someone has to code all of these scripts.
+- **Single point of failure:** the script itself could fail.
+- **Technical debt**, and ongoing **supportability**.
+
+**## What I mixed up**
+
+- Two benefits of automation are speed and taking over boring tasks. Two considerations are cost and the script being a single point of failure, because if it fails, multiple services can fail with it. Technical debt means a shortcut now creates more work and cost later.
+
+## Incident Response
+
+**## NIST incident response lifecycle**
+
+- NIST (National Institute of Standards and Technology) describes the lifecycle as: preparation, detection and analysis, containment, eradication, recovery, and post-incident activity.
+
+**## Preparation**
+
+- Communication methods.
+- Incident handling hardware and software.
+- Incident analysis resources.
+- Incident mitigation software.
+- The policies needed for incident handling.
+
+**## Detection and analysis**
+
+- Detecting incidents can be challenging: there are many different detection sources, a large volume of data, and incidents are almost always complex.
+- Analysis can help show whether an incident might occur in the future. Examples: a web server log, an exploit announcement, direct threats.
+- Analysis can also help show whether an attack is underway, such as a buffer overflow or an antivirus alert.
+
+**## Containment**
+
+- Isolation and containment are essential, since it's a bad idea to let things run their course.
+- You can test attacks in a sandbox, but isolation can cause malware to act differently.
+
+**## Eradication and recovery**
+
+- We need to get things back to normal and remove the bad: eradicate the bug and recover the system.
+
+**## Lessons learned (post-incident)**
+
+- Learning and improving. Hold a post-incident meeting, and don't wait too long after the incident.
+- You need to ask tough questions: what happened exactly, how did the incident plans work, what would we do differently next time, and which indicators would we watch next time.
+
+**## Training**
+
+- Training for an incident needs to happen beforehand, and it can be expensive.
+
+**## What I mixed up**
+
+- The NIST phases in order are preparation, detection and analysis, containment, eradication, recovery, and post-incident activity. I isolate a system instead of letting an attack run its course so it can't affect other systems, and isolation can change how malware behaves. The post-incident meeting should happen soon after the incident. Two tough questions to ask are what happened exactly, and whether the incident plan worked.
+
+## Incident Planning
+
+**## Exercising**
+
+- Test yourself before an actual event. Use well-defined rules of engagement, run a specific scenario, and evaluate the response.
+- **Tabletop exercise:** not a full-scale disaster drill, which can be costly. It's a logistical walkthrough of an analysis, and it involves key players.
+- **Simulation:** testing with a simulated event.
+- **Phishing simulation:** send a phishing email to the whole company and see who bites. It tests internal security and tests the users.
+
+**## Root cause analysis**
+
+- Determines the ultimate cause of an incident and helps create a set of conclusions about it.
+- Don't get tunnel vision, since there can be multiple root causes.
+- Mistakes can happen, and they can let an attacker gain access.
+
+**## Threat hunting**
+
+- A constant game of cat and mouse where strategies are often changing.
+- Intelligence data is reactive.
+
+**## What I mixed up**
+
+- A tabletop exercise is a logistical walkthrough of an analysis with key players, a simulation tests with a simulated event, and a full-scale disaster drill is the costly one where the response is actually carried out. Root cause analysis shouldn't get tunnel vision because there can be more than one root cause.
