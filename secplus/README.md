@@ -2939,3 +2939,99 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 **## What I mixed up**
 
 - A tabletop exercise is a logistical walkthrough of an analysis with key players, a simulation tests with a simulated event, and a full-scale disaster drill is the costly one where the response is actually carried out. Root cause analysis shouldn't get tunnel vision because there can be more than one root cause.
+
+## Digital Forensics
+
+**## Legal hold**
+
+- A legal technique to preserve relevant info. It's sent to a **custodian** to preserve data, and you keep a separate repository for **ESI (electronically stored information)**.
+- It's an ongoing preservation.
+
+**## Chain of custody**
+
+- Controls the evidence and maintains its integrity.
+- Everyone who comes into contact with the evidence uses hashing and digital signatures.
+- You need to label and catalog everything.
+
+**## Acquisition**
+
+- Typically the first step. You obtain the data from the OS, RAM, firmware, etc., and the data may not all be on the same system.
+- For virtual systems, take a **snapshot** and look for any digital items left behind.
+
+**## Reporting**
+
+- Documents the findings: a summary of the info, a detailed explanation of the data acquisition, an analysis of the data, and a conclusion.
+
+**## Preservation**
+
+- Handling the evidence: isolate and protect the data.
+- Manage the collection process: keep copies.
+- The skill of **live collection** is important, and you should follow best practices.
+
+**## E-discovery (electronic discovery)**
+
+- The process of collecting, preparing, reviewing, interpreting, and producing electronic documents.
+- Gathers the data required by the legal process, and works together with digital forensics.
+
+**## What I mixed up**
+
+- Legal hold preserves relevant info, and chain of custody controls the evidence and maintains its integrity. Hashing shows the evidence hasn't changed, and digital signatures show who handled it.
+- Live collection means collecting from a running system. (Confirm in the video why that's a skill.)
+- E-discovery collects, prepares, reviews, interprets, and produces electronic documents for the legal process, and it works together with digital forensics.
+
+## Log Data
+
+**## Security logs**
+
+- Contain detailed security-related info, like exploit attempts and blocked/allowed traffic flows.
+
+**## Firewall logs**
+
+- Contain traffic flows through the firewall: source and destination IP addresses, and port numbers.
+- **NGFW** logs also record the applications used, URL filtering categories, anomalies, etc.
+
+**## Application logs**
+
+- Specific to the application. In Windows, look in Event Viewer (the application log). In Linux and macOS, look in /var/log.
+- Usually parsed into a SIEM.
+
+**## Endpoint logs**
+
+- Can contain logon/logoff events, policy changes, and system changes. Can be put into a SIEM.
+
+**## OS-specific security logs**
+
+- Contain OS security events like brute force attempts and file changes.
+- Can help find problems before they happen, but may require filtering.
+
+**## IPS/IDS logs**
+
+- Usually integrated into an NGFW. The logs contain info about predefined vulnerabilities.
+- Common data points: timestamp, type of attack, and source/destination IP addresses and ports.
+
+**## Network logs**
+
+- Come from switches, routers, WAPs, and VPN concentrators.
+- Help you view network changes like routing updates, authentication issues, and network security issues.
+
+**## Metadata**
+
+- Data that describes other data sources. Examples: email, mobile devices, web browsers, and files.
+
+**## Vulnerability scans**
+
+- Give details about missing security controls (like no firewall or no antivirus), find misconfigured devices, and find real vulnerabilities.
+
+**## Automated reports and dashboards**
+
+- **Automated reports:** SIEMs include a report generator. Reports can be easy or complex to create and require human intervention.
+- **Dashboards:** real-time status info with summaries on a single screen. You can add and remove info, and it shows the important info.
+
+**## Packet captures**
+
+- Help solve complex application issues. They gather the packets on the network and provide detailed traffic info.
+
+**## What I mixed up**
+
+- Firewall logs show source and destination IP addresses and port numbers. NGFW logs show the applications used and URL filtering categories. Application logs are specific to the application: Event Viewer on Windows, /var/log on Linux and macOS.
+- A SIEM generates reports, a dashboard shows real-time status on one screen, and packet captures help solve complex application issues.
