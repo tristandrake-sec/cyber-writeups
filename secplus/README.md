@@ -3035,3 +3035,104 @@ Why use both asymmetric and symmetric instead of asymmetric the whole way: it co
 
 - Firewall logs show source and destination IP addresses and port numbers. NGFW logs show the applications used and URL filtering categories. Application logs are specific to the application: Event Viewer on Windows, /var/log on Linux and macOS.
 - A SIEM generates reports, a dashboard shows real-time status on one screen, and packet captures help solve complex application issues.
+
+## Security Policies
+
+**## Security policy guidelines**
+
+- Include how to achieve CIA, high-level strategies, detailed security goals, and security policy answers.
+
+**## Information security policies**
+
+- A big list of all the security-related policies. They include compliance requirements, detailed security procedures, and a list of roles and responsibilities.
+- A policy is just words on paper, so it must be enforced.
+
+**## AUP (acceptable use policy)**
+
+- Defines what users are able to do with the technology provided to them. Covers many topics, like telephones, computers, etc.
+- Used by an organization to limit legal liability.
+
+**## Business continuity plan**
+
+- Not everything goes to plan, and we rely heavily on our computer systems. That's where business continuity comes in: it provides an alternative.
+- It must be documented and tested before a problem occurs.
+
+**## Disaster recovery plan**
+
+- Applies if a disaster occurs. Many different disasters can happen (natural, technology, or human-based), so it must be a comprehensive plan.
+
+**## Security incidents**
+
+- Examples: a user clicks on an email attachment that executes malware, a DDoS occurs, or confidential data is stolen. A plan should be made for each.
+- **Incident response roles** are important for an incident response team: IT security management, compliance officers, technical staff, and the user community.
+- **NIST SP 800-61** is a handling guide for the incident response lifecycle.
+
+**## SDLC (software development lifecycle)**
+
+- The goal is to get from an idea to an app.
+
+**## Change management**
+
+- How to make a change, like upgrading software, a firewall config, or modifying ports. One of the most common risks in the enterprise, but often overlooked or not used at all. It must have clear policies.
+
+**## What I mixed up**
+
+- An AUP defines what users can do with the technology they're given, and an organization uses one to limit legal liability. Business continuity provides an alternative way to keep operating. Disaster recovery covers natural, technology, and human-based disasters. Both plans must be documented and tested before a problem occurs.
+
+## Security Standards
+
+**## What they are**
+
+- A formal definition for using security technologies and processes. They may be written in-house, and many standards, like ISO and NIST, are available.
+
+**## Password standards**
+
+- What makes a good password, acceptable authentication protocols, policies for password resets, and other password policies like frequency and how passwords are stored.
+
+**## Access control standards**
+
+- How an organization controls access to data. They define which access control types can be used, determine how a user gets access, and document how access may be removed.
+
+**## Physical security standards**
+
+- Rules and policies for physical security controls. They cover how to grant physical access, define specific physical security systems, and address additional security concerns.
+
+**## Encryption standards**
+
+- Specific standards for encrypting and securing data, password storage, and data encryption minimums.
+
+**## What I mixed up**
+
+- A policy says what must happen and why, a standard sets specific required rules, and a procedure gives the steps. (Confirm in the video.) A policy must be enforced, because it's just words on paper otherwise.
+
+## Security Procedures
+
+**## Change management**
+
+- A formal process for managing change that prevents confusion, downtime, and mistakes. Nothing changes without the process.
+- Steps: determine the scope, analyze the risk, create a plan, get end-user approval, present to the change control board, have a backout plan, then document the changes.
+
+**## Onboarding**
+
+- Bringing a new person into the organization: agreements need to be signed, new accounts created with the proper rights, and IT hardware provided.
+
+**## Offboarding**
+
+- When users leave the organization. It should be pre-planned.
+- It should answer: what happens to the hardware and the data? Account info should be deactivated.
+
+**## Playbooks**
+
+- Define step-by-step procedures and processes to follow based on an event. Often integrated with a **SOAR platform**.
+
+**## Monitoring and revisions**
+
+- IT security is constantly changing, which is where monitoring and revisions come in: updates to security postures, changes to individual procedures, and new security concerns.
+
+**## Governance structure**
+
+- Contains boards, committees, government entities, and centralized/decentralized forms.
+
+**## What I mixed up**
+
+- A formal change management process prevents confusion, downtime, and mistakes. Offboarding should answer what happens to the hardware and data, and account info should be deactivated. A playbook gives step-by-step procedures for an event and is often integrated with a SOAR platform.
